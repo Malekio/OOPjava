@@ -1,0 +1,63 @@
+INFO 2025-11-27 17:46:28,594 autoreload 12344 139747362709248 Watching for file changes with StatReloader
+INFO 2025-11-27 17:51:31,679 autoreload 12635 140211279408896 Watching for file changes with StatReloader
+WARNING 2025-11-27 17:51:33,475 log 12635 140210876708544 Not Found: /
+WARNING 2025-11-27 17:51:33,515 log 12635 140210876708544 Not Found: /favicon.ico
+INFO 2025-11-27 17:52:26,102 autoreload 12635 140211279408896 /home/malek/projects/TourGuideDZ/server/tours/serializers.py changed, reloading.
+INFO 2025-11-27 17:52:26,620 autoreload 12759 140414839729920 Watching for file changes with StatReloader
+INFO 2025-11-27 18:08:41,752 autoreload 12759 140414839729920 /home/malek/projects/TourGuideDZ/server/server/urls.py changed, reloading.
+INFO 2025-11-27 18:08:42,327 autoreload 14202 140371759849216 Watching for file changes with StatReloader
+INFO 2025-11-27 18:08:43,627 autoreload 14202 140371759849216 /home/malek/projects/TourGuideDZ/server/server/urls.py changed, reloading.
+INFO 2025-11-27 18:08:43,988 autoreload 14212 140028940738304 Watching for file changes with StatReloader
+INFO 2025-11-27 18:08:46,270 autoreload 14212 140028940738304 /home/malek/projects/TourGuideDZ/server/server/urls.py changed, reloading.
+INFO 2025-11-27 18:08:46,715 autoreload 14221 140362106474240 Watching for file changes with StatReloader
+WARNING 2025-11-27 18:17:53,931 log 14221 140361611605696 Not Found: /favicon.ico
+WARNING 2025-11-27 18:37:53,194 log 14221 140361694439104 Not Found: /register/
+WARNING 2025-11-27 18:37:55,122 log 14221 140361694439104 Not Found: /register/
+WARNING 2025-11-27 18:39:45,908 log 14221 140361594820288 Not Found: /v1/auth/register/
+INFO 2025-11-27 18:41:01,461 autoreload 14221 140362106474240 /home/malek/projects/TourGuideDZ/server/server/urls.py changed, reloading.
+INFO 2025-11-27 18:41:01,975 autoreload 15023 140680576507648 Watching for file changes with StatReloader
+INFO 2025-11-27 19:07:30,389 autoreload 15023 140680576507648 /home/malek/projects/TourGuideDZ/server/locations/models.py changed, reloading.
+INFO 2025-11-27 19:07:30,783 autoreload 15605 139747049467648 Watching for file changes with StatReloader
+INFO 2025-11-27 19:17:21,473 autoreload 15605 139747049467648 /home/malek/projects/TourGuideDZ/server/profiles/models.py changed, reloading.
+INFO 2025-11-27 19:17:21,906 autoreload 15795 139940250029824 Watching for file changes with StatReloader
+INFO 2025-11-27 19:17:36,517 autoreload 15795 139940250029824 /home/malek/projects/TourGuideDZ/server/profiles/models.py changed, reloading.
+INFO 2025-11-27 19:17:36,998 autoreload 15828 140204875357952 Watching for file changes with StatReloader
+INFO 2025-11-27 19:18:11,962 autoreload 15828 140204875357952 /home/malek/projects/TourGuideDZ/server/profiles/models.py changed, reloading.
+INFO 2025-11-27 19:18:12,445 autoreload 15865 139921767677696 Watching for file changes with StatReloader
+INFO 2025-11-27 19:30:06,365 autoreload 15865 139921767677696 /home/malek/projects/TourGuideDZ/server/profiles/models.py changed, reloading.
+INFO 2025-11-27 19:30:06,982 autoreload 16459 139757363351296 Watching for file changes with StatReloader
+INFO 2025-11-27 19:30:42,840 autoreload 16459 139757363351296 /home/malek/projects/TourGuideDZ/server/profiles/serializers.py changed, reloading.
+INFO 2025-11-27 19:30:43,435 autoreload 16523 140418867855104 Watching for file changes with StatReloader
+INFO 2025-11-27 19:32:53,414 autoreload 17071 139744600809216 Watching for file changes with StatReloader
+INFO 2025-11-27 19:33:33,440 autoreload 17071 139744600809216 /home/malek/projects/TourGuideDZ/server/profiles/models.py changed, reloading.
+INFO 2025-11-27 19:33:34,025 autoreload 17133 140392447930112 Watching for file changes with StatReloader
+INFO 2025-11-27 19:47:54,678 autoreload 17133 140392447930112 /home/malek/projects/TourGuideDZ/server/tours/models.py changed, reloading.
+INFO 2025-11-27 19:47:55,271 autoreload 17788 139930676473600 Watching for file changes with StatReloader
+INFO 2025-11-27 19:47:57,569 autoreload 17788 139930676473600 /home/malek/projects/TourGuideDZ/server/tours/models.py changed, reloading.
+INFO 2025-11-27 19:47:57,940 autoreload 17806 140138871590656 Watching for file changes with StatReloader
+INFO 2025-11-27 19:54:31,070 autoreload 17806 140138871590656 /home/malek/projects/TourGuideDZ/server/tours/models.py changed, reloading.
+INFO 2025-11-27 19:54:31,670 autoreload 18231 139705943285504 Watching for file changes with StatReloader
+INFO 2025-11-27 19:54:43,147 autoreload 18231 139705943285504 /home/malek/projects/TourGuideDZ/server/tours/models.py changed, reloading.
+INFO 2025-11-27 19:54:43,618 autoreload 18269 139726675824384 Watching for file changes with StatReloader
+INFO 2025-11-27 19:56:10,083 autoreload 18269 139726675824384 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-27 19:56:10,493 autoreload 18330 140129975299840 Watching for file changes with StatReloader
+INFO 2025-11-27 19:56:25,983 autoreload 18330 140129975299840 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-27 19:56:26,360 autoreload 18444 139787795496704 Watching for file changes with StatReloader
+INFO 2025-11-27 19:56:43,854 autoreload 18444 139787795496704 /home/malek/projects/TourGuideDZ/server/tours/urls.py changed, reloading.
+INFO 2025-11-27 19:56:44,224 autoreload 18485 140486526267136 Watching for file changes with StatReloader
+INFO 2025-11-27 20:00:35,328 autoreload 18752 140242300403456 Watching for file changes with StatReloader
+INFO 2025-11-27 20:03:44,572 autoreload 18752 140242300403456 /home/malek/projects/TourGuideDZ/server/tours/urls.py changed, reloading.
+INFO 2025-11-27 20:03:45,075 autoreload 19079 140266791608064 Watching for file changes with StatReloader
+INFO 2025-11-27 20:12:02,619 autoreload 19079 140266791608064 /home/malek/projects/TourGuideDZ/server/bookings/models.py changed, reloading.
+INFO 2025-11-27 20:12:03,212 autoreload 19495 140526307593984 Watching for file changes with StatReloader
+INFO 2025-11-27 21:13:44,852 autoreload 21056 140529169788672 Watching for file changes with StatReloader
+WARNING 2025-11-27 21:16:52,159 log 21056 140528763008704 Not Found: /v1/health/abd
+ERROR 2025-11-27 21:19:12,354 exceptions 21056 140528754616000 API Error: 400 - {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')], 'email': [ErrorDetail(string='User with this email already exists.', code='invalid')]}
+WARNING 2025-11-27 21:19:12,355 log 21056 140528754616000 Bad Request: /v1/auth/register/
+ERROR 2025-11-27 21:19:34,906 exceptions 21056 140528754616000 API Error: 400 - {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}
+WARNING 2025-11-27 21:19:34,907 log 21056 140528754616000 Bad Request: /v1/auth/register/
+ERROR 2025-11-27 21:20:56,458 exceptions 21056 140528645568192 API Error: 400 - {'username': [ErrorDetail(string='A user with that username already exists.', code='unique')], 'email': [ErrorDetail(string='User with this email already exists.', code='invalid')]}
+WARNING 2025-11-27 21:20:56,459 log 21056 140528645568192 Bad Request: /v1/auth/register/
+INFO 2025-11-27 21:29:40,412 autoreload 21056 140529169788672 /home/malek/projects/TourGuideDZ/server/server/settings.py changed, reloading.
+INFO 2025-11-27 21:29:41,144 autoreload 21648 140302342074112 Watching for file changes with StatReloader
+INFO 2025-11-27 21:29:49,916 autoreload 21648 140302342074112 /home/malek/projects/TourGuideDZ/server/server/settings.py changed, reloading.

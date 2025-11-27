@@ -1,0 +1,292 @@
+🚀 COMPLETE AI PROMPT FOR DZ-TOURGUIDE BACKEND
+
+I need you to develop a complete Django REST Framework backend for DZ-TourGuide - a local tour guide booking platform for Algeria.
+📋 PROJECT OVERVIEW
+
+DZ-TourGuide is a platform connecting tourists with certified local guides for personalized tours in Algeria. The MVP must include:
+
+Core MVP Features:
+
+    Dual Profiles: Registration/login for "Guides" and "Tourists"
+
+    Guide Profiles: Public profiles with photos, bio, languages, coverage areas, certifications
+
+    Tour Management: Guides create predefined "Tours" with title, description, duration, price, photos
+
+    Tour Directory: Tourists can browse all tours and search by city
+
+    Booking Process: Tourists request bookings for specific dates, guides manually approve
+
+Critical Business Constraints:
+
+    Flexible Pricing Grid: Guides set half-day (≤4h), full-day (4-8h), and extra-hour prices. System auto-calculates tour prices.
+
+    Coverage Zones: Guides specify covered wilayas. Tours must be within covered wilayas.
+
+    Booking Workflow: Tourist requests → Guide approves/rejects → Booking confirmed
+
+External Integration:
+
+    Weather API integration for tour locations (to be implemented later)
+
+🎯 ENDPOINTS TO IMPLEMENT
+🔐 Authentication & User Management
+
+POST /auth/register/ # Create new account (tourist/guide)
+POST /auth/login/ # Login (JWT tokens)
+POST /auth/logout/ # Logout
+POST /auth/refresh/ # Refresh JWT token
+GET /auth/me/ # Get current user profile
+PUT /auth/me/ # Update current user profile
+👤 User Profiles
+
+GET /profiles/guides/ # List all guides (with filters)
+GET /profiles/guides/{id}/ # Get specific guide details
+GET /profiles/guides/me/ # Get my guide profile (guides only)
+PUT /profiles/guides/me/ # Update my guide profile
+POST /profiles/guides/certifications/ # Upload certification documents
+DELETE /profiles/guides/certifications/{id}/ # Remove certification
+GET /profiles/tourists/me/ # Get my tourist profile
+PUT /profiles/tourists/me/ # Update my tourist profile
+🗺️ Tours Management
+
+GET /tours/ # List all tours (with search/filters)
+POST /tours/ # Create new tour (guides only)
+GET /tours/{id}/ # Get specific tour details
+PUT /tours/{id}/ # Update tour (owner guide only)
+DELETE /tours/{id}/ # Delete tour (owner guide only)
+GET /tours/me/ # Get my tours (guides only)
+GET /tours/{id}/availability/ # Check available dates for a tour
+POST /tours/{id}/calculate-price/ # Calculate price for custom duration
+🔎 Tours Search & Filters
+
+GET /tours/search/?q= # Search tours by title/description
+GET /tours/?wilaya=16 # Filter by wilaya
+GET /tours/?guide_id=5 # Filter by guide
+GET /tours/?max_price=1000 # Filter by price range
+GET /tours/?duration=4 # Filter by duration
+GET /tours/?language=French # Filter by guide language
+📅 Booking System
+
+GET /bookings/ # List my bookings (both tourist/guide)
+POST /bookings/ # Create booking request (tourists only)
+GET /bookings/{id}/ # Get booking details
+PUT /bookings/{id}/status/ # Update booking status (guide only)
+DELETE /bookings/{id}/ # Cancel booking (tourist before confirmation)
+GET /bookings/guide/pending/ # Get pending bookings (guides only)
+GET /bookings/tourist/upcoming/ # Get upcoming tours (tourists only)
+GET /bookings/{id}/invoice/ # Get booking invoice/details
+POST /bookings/{id}/cancel/ # Cancel booking (with reasons)
+GET /bookings/calendar/available/ # Get guide's available slots
+⭐ Reviews & Ratings
+
+GET /tours/{id}/reviews/ # Get reviews for a tour
+GET /guides/{id}/reviews/ # Get reviews for a guide
+POST /bookings/{id}/review/ # Add review (tourist after completed tour)
+PUT /reviews/{id}/ # Update my review
+DELETE /reviews/{id}/ # Delete my review
+🗺️ Location Data
+
+GET /wilayas/ # List all Algerian wilayas
+GET /wilayas/{id}/ # Get specific wilaya details
+GET /wilayas/{id}/guides/ # Get guides in specific wilaya
+GET /wilayas/{id}/tours/ # Get tours in specific wilaya
+💰 Pricing & Guides
+
+GET /guides/{id}/pricing/ # Get guide's pricing structure
+🛠️ Admin & Management
+
+GET /admin/guides/pending/ # Get guides pending verification (admin)
+PUT /admin/guides/{id}/verify/ # Verify guide certification (admin)
+GET /admin/stats/ # Get platform statistics (admin)
+GET /admin/bookings/ # Get all bookings (admin)
+🩺 System Health
+
+GET /health/ # System status check
+GET /metrics/ # Basic platform metrics (public)
+🛡️ SECURITY REQUIREMENTS
+Authentication & Authorization
+
+    Implement proper JWT token refresh/revocation
+
+    Password hashing with bcrypt/argon2
+
+    Rate limiting on authentication endpoints
+
+    Session management security
+
+Data Protection
+
+    SQL injection prevention (use Django ORM properly)
+
+    XSS protection for user-generated content
+
+    CSRF protection for state-changing operations
+
+    Input validation on ALL endpoints
+
+Business Logic Security
+
+    Ensure users can only access their own data
+
+    Guides can only modify their own tours/bookings
+
+    Tourists can only review completed tours they booked
+
+    Admin-only endpoints properly protected
+
+    Tourists can only book, not create tours
+
+    Guides can only manage their own tour bookings
+
+File Upload Security
+
+    Validate file types for guide certifications
+
+    Scan uploaded images for malware
+
+    Secure file storage with proper permissions
+
+⚠️ BUSINESS RULES & CONSTRAINTS
+Pricing System (Flexible Tariff Grid)
+
+    Guides set base pricing: half-day price (up to 4 hours), full-day price (4-8 hours), extra-hour price (beyond 8 hours)
+
+    When creating a Tour, system automatically calculates price based on tour duration and guide's pricing structure
+
+    For custom tour requests, price is calculated based on requested duration
+
+    Price calculation logic:
+
+        Duration ≤ 4 hours: use half-day price
+
+        Duration 4-8 hours: use full-day price
+
+        Duration > 8 hours: full-day price + (extra hours × extra-hour price)
+
+Coverage Zones Management
+
+    Guides specify which wilayas they work in (coverage zones)
+
+    When creating a Tour, the tour location must be within one of the guide's covered wilayas
+
+    Search functionality must filter tours by wilaya
+
+    Tourists can only search for tours in specific wilayas
+
+Booking Workflow
+
+    Tourist selects tour and proposes date/time → System creates booking with "pending" status
+
+    Guide receives booking request and can: accept, reject, or propose alternative time
+
+    Guide has 24 hours to respond to booking requests
+
+    Only after guide acceptance does booking become "confirmed"
+
+    Tourists can only leave reviews for completed tours they actually booked
+
+Data Validation Rules
+
+    Tour start location must be within guide's covered wilayas
+
+    Booking dates must be future dates (cannot book in the past)
+
+    Reviews require completed bookings (status = "completed")
+
+    Users cannot modify other users' data
+
+    Guides cannot create tours outside their coverage zones
+
+🚀 TECHNICAL REQUIREMENTS
+Performance
+
+    Implement pagination on all list endpoints
+
+    Database indexing for search/filter operations (wilaya, tour status, booking dates)
+
+    Query optimization to avoid N+1 problems (use select_related and prefetch_related)
+
+    Caching strategy for frequently accessed data (wilayas list, guide profiles)
+
+Error Handling
+
+    Consistent error response format across all endpoints
+
+    Proper HTTP status codes (200, 201, 400, 401, 403, 404, 500)
+
+    Informative error messages without exposing sensitive data
+
+    Comprehensive logging for debugging and monitoring
+
+API Design
+
+    RESTful conventions
+
+    Consistent snake_case naming throughout
+
+    Proper HTTP methods usage (GET, POST, PUT, DELETE)
+
+    API versioning consideration (api/v1/ prefix)
+
+Database Design
+
+    Proper relationships with ForeignKey and ManyToMany fields
+
+    Appropriate field types and constraints
+
+    Indexes for frequently queried fields
+
+    Data normalization while maintaining performance
+
+📦 DELIVERABLES NEEDED
+
+    Complete Django models with proper relationships and constraints
+
+    DRF serializers with comprehensive validation
+
+    ViewSets/API views with proper permissions and business logic
+
+    URL routing configuration for all endpoints
+
+    JWT-based authentication system
+
+    Database migrations
+
+    Example unit tests for critical functionality (authentication, booking workflow, pricing calculation)
+
+    Basic permissions classes for tourists, guides, and admins
+
+    Management command to seed Algerian wilayas data
+
+    Requirements.txt with all dependencies
+
+🎯 IMPLEMENTATION PRIORITY
+
+Phase 1 (Core):
+
+    User models and authentication
+
+    Guide and Tourist profiles
+
+    Wilayas data model
+
+    Basic tour CRUD
+
+Phase 2 (Bookings):
+
+    Booking system with status workflow
+
+    Pricing calculation service
+
+    Search and filters
+
+Phase 3 (Advanced):
+
+    Reviews and ratings
+
+    File upload for certifications
+
+    Admin endpoints
+
+Please start with the core models and authentication system, then progressively build the other components. Focus on implementing the business rules correctly, especially the flexible pricing system and coverage zones validation.
