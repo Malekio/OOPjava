@@ -90,6 +90,7 @@
                   "    pm.expect(response).to.have.property('user');",
                   "    pm.expect(response.user).to.have.property('id');",
                   "    pm.environment.set('tourist_id', response.user.id);",
+                  "    pm.environment.set('tourist_username', response.user.username);",
                   "});"
                 ]
               }
@@ -156,7 +157,52 @@
           }
         },
         {
-          "name": "3️⃣ Login Guide (Get Tokens)",
+          "name": "3️⃣ Login Tourist (Get Tokens)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Tourist login successful', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains tokens', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('access');",
+                  "    pm.expect(response).to.have.property('refresh');",
+                  "    ",
+                  "    // Save tourist tokens",
+                  "    pm.environment.set('tourist_access_token', response.access);",
+                  "    pm.environment.set('tourist_refresh_token', response.refresh);",
+                  "    pm.environment.set('access_token', response.access);",
+                  "    pm.environment.set('refresh_token', response.refresh);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{tourist_username}}\",\n  \"password\": \"SecurePass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/auth/login/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "auth", "login", ""]
+            }
+          }
+        },
+        {
+          "name": "4️⃣ Login Guide (Get Tokens)",
           "event": [
             {
               "listen": "test",
@@ -171,7 +217,9 @@
                   "    pm.expect(response).to.have.property('access');",
                   "    pm.expect(response).to.have.property('refresh');",
                   "    ",
-                  "    // Save tokens for subsequent requests",
+                  "    // Save guide tokens",
+                  "    pm.environment.set('guide_access_token', response.access);",
+                  "    pm.environment.set('guide_refresh_token', response.refresh);",
                   "    pm.environment.set('access_token', response.access);",
                   "    pm.environment.set('refresh_token', response.refresh);",
                   "});"
@@ -226,6 +274,49 @@
                 "value": "Bearer {{access_token}}"
               }
             ],
+            "url": {
+              "raw": "{{base_url}}/v1/auth/me/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "auth", "me", ""]
+            }
+          }
+        },
+        {
+          "name": "5️⃣ Update Current User Profile",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('User profile updated successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Profile contains updated data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('first_name');",
+                  "    pm.expect(response).to.have.property('last_name');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"first_name\": \"Updated First\",\n  \"last_name\": \"Updated Last\",\n  \"phone_number\": \"+213555987654\"\n}"
+            },
             "url": {
               "raw": "{{base_url}}/v1/auth/me/",
               "host": ["{{base_url}}"],
@@ -299,12 +390,147 @@
               "path": ["v1", "wilayas", "{{wilaya_id}}", ""]
             }
           }
+        },
+        {
+          "name": "Get Guides in Wilaya",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Guides in wilaya retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains guides list', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('results');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/wilayas/{{wilaya_id}}/guides/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "wilayas", "{{wilaya_id}}", "guides", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Tours in Wilaya",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Tours in wilaya retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains tours list', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('results');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/wilayas/{{wilaya_id}}/tours/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "wilayas", "{{wilaya_id}}", "tours", ""]
+            }
+          }
         }
       ]
     },
     {
       "name": "👤 Profile Management",
       "item": [
+        {
+          "name": "Get My Tourist Profile",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Tourist profile retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Profile contains tourist data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('user');",
+                  "    pm.expect(response).to.have.property('preferences');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/profiles/tourists/me/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "profiles", "tourists", "me", ""]
+            }
+          }
+        },
+        {
+          "name": "Update My Tourist Profile",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Tourist profile updated successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Updated profile contains new data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response.preferences).to.include('Cultural Tours');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"preferences\": [\"Cultural Tours\", \"Historical Sites\", \"Adventure Tours\"],\n  \"budget_range\": \"medium\",\n  \"travel_style\": \"group\",\n  \"accessibility_needs\": \"none\",\n  \"emergency_contact_name\": \"Ahmed Benali\",\n  \"emergency_contact_phone\": \"+213555987654\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/profiles/tourists/me/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "profiles", "tourists", "me", ""]
+            }
+          }
+        },
         {
           "name": "List All Guides",
           "event": [
@@ -408,6 +634,255 @@
               "raw": "{{base_url}}/v1/profiles/guides/me/",
               "host": ["{{base_url}}"],
               "path": ["v1", "profiles", "guides", "me", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Guide Pricing Structure",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Guide pricing retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Pricing contains guide rates', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('half_day_price');",
+                  "    pm.expect(response).to.have.property('full_day_price');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/profiles/guides/{{guide_id}}/pricing/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "profiles", "guides", "{{guide_id}}", "pricing", ""]
+            }
+          }
+        },
+        {
+          "name": "Add Guide Certification",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Certification created successfully', function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test('Response contains certification data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('id');",
+                  "    pm.expect(response).to.have.property('name');",
+                  "    pm.environment.set('certification_id', response.id);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Professional Tour Guide License\",\n  \"issuing_organization\": \"Ministry of Tourism - Algeria\",\n  \"issue_date\": \"2020-06-15\",\n  \"expiry_date\": \"2025-06-15\",\n  \"description\": \"Official license to operate as a professional tour guide in Algeria\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/profiles/guides/certifications/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "profiles", "guides", "certifications", ""]
+            }
+          }
+        },
+        {
+          "name": "List My Certifications",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Certifications list retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response is an array', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response.results).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/profiles/guides/certifications/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "profiles", "guides", "certifications", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Certification Details",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Certification details retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Certification contains details', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('name');",
+                  "    pm.expect(response).to.have.property('issuing_organization');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/profiles/guides/certifications/{{certification_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "profiles", "guides", "certifications", "{{certification_id}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Update Certification",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Certification updated successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Updated certification contains new data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response.description).to.include('Updated');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Professional Tour Guide License\",\n  \"issuing_organization\": \"Ministry of Tourism - Algeria\",\n  \"issue_date\": \"2020-06-15\",\n  \"expiry_date\": \"2025-06-15\",\n  \"description\": \"Updated: Official license to operate as a professional tour guide in Algeria with additional specializations\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/profiles/guides/certifications/{{certification_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "profiles", "guides", "certifications", "{{certification_id}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Delete Certification",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Certification deleted successfully', function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/profiles/guides/certifications/{{certification_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "profiles", "guides", "certifications", "{{certification_id}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Specific Guide Details",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Guide details retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Guide contains public profile data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('user');",
+                  "    pm.expect(response).to.have.property('bio');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/profiles/guides/{{guide_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "profiles", "guides", "{{guide_id}}", ""]
             }
           }
         }
@@ -553,6 +1028,123 @@
               "path": ["v1", "tours", "me", ""]
             }
           }
+        },
+        {
+          "name": "Search Tours",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Tour search successful', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains search results', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('results');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/tours/search/?q=casbah",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "tours", "search", ""],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "casbah"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Advanced Tour Search",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Advanced tour search successful', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains filtered results', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('results');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/tours/search/?q=casbah&min_price=50&max_price=200&wilaya=1",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "tours", "search", ""],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "casbah"
+                },
+                {
+                  "key": "min_price",
+                  "value": "50"
+                },
+                {
+                  "key": "max_price",
+                  "value": "200"
+                },
+                {
+                  "key": "wilaya",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Calculate Tour Price with Group Size",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Tour price calculation successful', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains calculated pricing', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('total_price');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/tours/{{tour_id}}/calculate-price/?group_size=8",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "tours", "{{tour_id}}", "calculate-price", ""],
+              "query": [
+                {
+                  "key": "group_size",
+                  "value": "8"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -671,6 +1263,226 @@
               "path": ["v1", "bookings", "{{booking_id}}", ""]
             }
           }
+        },
+        {
+          "name": "Tourist Upcoming Bookings",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Tourist upcoming bookings retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains upcoming bookings', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('results');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/bookings/tourist/upcoming/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "bookings", "tourist", "upcoming", ""]
+            }
+          }
+        },
+        {
+          "name": "Guide Pending Bookings",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Guide pending bookings retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains pending bookings', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('results');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/bookings/guide/pending/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "bookings", "guide", "pending", ""]
+            }
+          }
+        },
+        {
+          "name": "Update Booking Status (Approve)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Booking status updated successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains updated status', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response.status).to.eql('confirmed');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"confirmed\",\n  \"guide_notes\": \"Booking confirmed! Looking forward to showing you the beautiful Casbah. Please wear comfortable walking shoes.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/bookings/{{booking_id}}/status/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "bookings", "{{booking_id}}", "status", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Booking Invoice",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Booking invoice retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains invoice details', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('total_amount');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/bookings/{{booking_id}}/invoice/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "bookings", "{{booking_id}}", "invoice", ""]
+            }
+          }
+        },
+        {
+          "name": "Cancel Booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Booking cancelled successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains cancellation status', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response.status).to.eql('cancelled');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cancellation_reason\": \"Change of travel plans due to unexpected circumstances\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/bookings/{{booking_id}}/cancel/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "bookings", "{{booking_id}}", "cancel", ""]
+            }
+          }
+        },
+        {
+          "name": "Guide Availability Calendar",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Guide availability calendar retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains availability data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/bookings/calendar/available/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "bookings", "calendar", "available", ""]
+            }
+          }
         }
       ]
     },
@@ -747,6 +1559,79 @@
               "raw": "{{base_url}}/v1/reviews/tours/{{tour_id}}/reviews/",
               "host": ["{{base_url}}"],
               "path": ["v1", "reviews", "tours", "{{tour_id}}", "reviews", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Guide Reviews",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Guide reviews retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response is paginated', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('results');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/v1/reviews/guides/{{guide_id}}/reviews/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "reviews", "guides", "{{guide_id}}", "reviews", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Review for Completed Booking",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Review created successfully', function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test('Response contains review data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('id');",
+                  "    pm.expect(response).to.have.property('rating');",
+                  "    pm.environment.set('review_id', response.id);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 5,\n  \"title\": \"Absolutely Amazing Experience!\",\n  \"content\": \"Ahmed was an exceptional guide! His knowledge of Algerian history and culture is incredible. The tour of the Casbah was perfectly organized and we learned so much. Highly recommend to anyone visiting Algeria!\",\n  \"would_recommend\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/reviews/bookings/{{booking_id}}/review/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "reviews", "bookings", "{{booking_id}}", "review", ""]
             }
           }
         }
@@ -871,6 +1756,271 @@
               "raw": "{{base_url}}/v1/messaging/conversations/",
               "host": ["{{base_url}}"],
               "path": ["v1", "messaging", "conversations", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Messages in Conversation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Messages retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains messages array', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/messaging/conversations/{{conversation_id}}/messages/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "messaging", "conversations", "{{conversation_id}}", "messages", ""]
+            }
+          }
+        },
+        {
+          "name": "Mark Messages as Read",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Messages marked as read successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains status message', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('status');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/messaging/conversations/{{conversation_id}}/mark_read/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "messaging", "conversations", "{{conversation_id}}", "mark_read", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Custom Tour Request",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Custom tour request created successfully', function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test('Response contains request data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('id');",
+                  "    pm.expect(response).to.have.property('status');",
+                  "    pm.environment.set('custom_request_id', response.id);",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"guide\": {{guide_id}},\n  \"title\": \"Custom Archaeological Tour of Roman Sites\",\n  \"description\": \"I'm very interested in Roman history and would love a specialized tour focusing on Roman ruins and archaeological sites around Algeria. I'm particularly interested in Timgad and Djemila if possible.\",\n  \"preferred_date\": \"2024-12-20\",\n  \"duration_hours\": 8,\n  \"group_size\": 2,\n  \"budget_range\": \"200-300\",\n  \"special_requirements\": \"Need transportation from Algiers. Prefer English-speaking guide with archaeological background.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/messaging/custom-requests/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "messaging", "custom-requests", ""]
+            }
+          }
+        },
+        {
+          "name": "List Custom Tour Requests",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Custom tour requests retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response is paginated', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('results');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/messaging/custom-requests/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "messaging", "custom-requests", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Custom Tour Request Details",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Custom tour request details retrieved successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains request details', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response).to.have.property('title');",
+                  "    pm.expect(response).to.have.property('status');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/v1/messaging/custom-requests/{{custom_request_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "messaging", "custom-requests", "{{custom_request_id}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Update Custom Tour Request",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Custom tour request updated successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response contains updated data', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response.description).to.include('Updated');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Updated: Custom Archaeological Tour of Roman Sites\",\n  \"description\": \"Updated: I'm very interested in Roman history and would love a specialized tour focusing on Roman ruins and archaeological sites around Algeria. I'm particularly interested in Timgad, Djemila, and also Hippo Regius if possible.\",\n  \"preferred_date\": \"2024-12-22\",\n  \"duration_hours\": 10,\n  \"group_size\": 3,\n  \"budget_range\": \"250-350\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/messaging/custom-requests/{{custom_request_id}}/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "messaging", "custom-requests", "{{custom_request_id}}", ""]
+            }
+          }
+        },
+        {
+          "name": "Guide Respond to Custom Tour Request (Accept)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Guide response submitted successfully', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response shows accepted status', function () {",
+                  "    const response = pm.response.json();",
+                  "    pm.expect(response.status).to.eql('accepted');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"accept\",\n  \"proposed_price\": \"280.00\",\n  \"alternative_date\": \"2024-12-21\",\n  \"guide_response\": \"I'd be delighted to create this custom archaeological tour for you! I specialize in Roman history and have extensive knowledge of Timgad and Djemila. I can arrange transportation from Algiers and provide detailed historical context throughout the journey.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v1/messaging/custom-requests/{{custom_request_id}}/respond/",
+              "host": ["{{base_url}}"],
+              "path": ["v1", "messaging", "custom-requests", "{{custom_request_id}}", "respond", ""]
             }
           }
         }
