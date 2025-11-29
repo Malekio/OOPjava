@@ -61,3 +61,502 @@ WARNING 2025-11-27 21:20:56,459 log 21056 140528645568192 Bad Request: /v1/auth/
 INFO 2025-11-27 21:29:40,412 autoreload 21056 140529169788672 /home/malek/projects/TourGuideDZ/server/server/settings.py changed, reloading.
 INFO 2025-11-27 21:29:41,144 autoreload 21648 140302342074112 Watching for file changes with StatReloader
 INFO 2025-11-27 21:29:49,916 autoreload 21648 140302342074112 /home/malek/projects/TourGuideDZ/server/server/settings.py changed, reloading.
+INFO 2025-11-27 22:23:25,061 autoreload 26059 140259063549696 Watching for file changes with StatReloader
+INFO 2025-11-27 22:57:14,592 autoreload 26420 140485296013056 Watching for file changes with StatReloader
+INFO 2025-11-29 18:01:46,260 autoreload 11059 140610302852864 Watching for file changes with StatReloader
+WARNING 2025-11-29 18:01:48,399 log 11059 140609896576704 Not Found: /
+INFO 2025-11-29 18:26:39,603 autoreload 13379 140160839384832 Watching for file changes with StatReloader
+ERROR 2025-11-29 18:28:31,253 log 13379 140160419231424 Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'is_verified'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/server/bookings/admin.py", line 108, in changelist_view
+    return super().changelist_view(request, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 503, in get_queryset
+    ) = self.get_filters(request)
+        ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 180, in get_filters
+    field = get_fields_from_path(self.model, field_path)[-1]
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/utils.py", line 517, in get_fields_from_path
+    fields.append(parent._meta.get_field(piece))
+                  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: GuideProfile has no field named 'is_verified'
+ERROR 2025-11-29 18:28:54,079 log 13379 140160419231424 Internal Server Error: /admin/bookings/booking/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/options.py", line 681, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'is_verified'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/server/bookings/admin.py", line 108, in changelist_view
+    return super().changelist_view(request, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 503, in get_queryset
+    ) = self.get_filters(request)
+        ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 180, in get_filters
+    field = get_fields_from_path(self.model, field_path)[-1]
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/utils.py", line 517, in get_fields_from_path
+    fields.append(parent._meta.get_field(piece))
+                  ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+        "%s has no field named '%s'" % (self.object_name, field_name)
+    )
+django.core.exceptions.FieldDoesNotExist: GuideProfile has no field named 'is_verified'
+ERROR 2025-11-29 18:29:12,650 log 13379 140160419231424 Internal Server Error: /admin/messaging/conversation/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: conversations
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: conversations
+ERROR 2025-11-29 18:29:26,617 log 13379 140160419231424 Internal Server Error: /admin/messaging/customtourrequest/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: custom_tour_requests
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/server/messaging/admin.py", line 210, in changelist_view
+    total_requests = queryset.count()
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: custom_tour_requests
+ERROR 2025-11-29 18:29:35,731 log 13379 140160419231424 Internal Server Error: /admin/messaging/conversation/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: conversations
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: conversations
+ERROR 2025-11-29 18:29:48,541 log 13379 140160419231424 Internal Server Error: /admin/messaging/customtourrequest/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: custom_tour_requests
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/server/messaging/admin.py", line 210, in changelist_view
+    total_requests = queryset.count()
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: custom_tour_requests
+ERROR 2025-11-29 18:30:15,324 log 13379 140160419231424 Internal Server Error: /admin/messaging/message/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: messages
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: messages
+INFO 2025-11-29 18:31:59,632 autoreload 13379 140160839384832 /home/malek/projects/TourGuideDZ/server/bookings/admin.py changed, reloading.
+INFO 2025-11-29 18:32:00,305 autoreload 14201 139904438669056 Watching for file changes with StatReloader
+INFO 2025-11-29 18:32:15,939 autoreload 14201 139904438669056 /home/malek/projects/TourGuideDZ/server/bookings/admin.py changed, reloading.
+INFO 2025-11-29 18:32:16,577 autoreload 14242 140569284058880 Watching for file changes with StatReloader
+INFO 2025-11-29 18:39:38,615 autoreload 14242 140569284058880 /home/malek/projects/TourGuideDZ/server/accounts/admin.py changed, reloading.
+INFO 2025-11-29 18:39:39,120 autoreload 14834 140151852592896 Watching for file changes with StatReloader

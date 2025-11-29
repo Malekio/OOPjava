@@ -33,6 +33,10 @@ class Tour(models.Model):
     excluded_services = models.JSONField(default=list)  # List of excluded services
     meeting_point = models.CharField(max_length=200)
     
+    # GPS Coordinates for weather API
+    latitude = models.DecimalField(max_digits=9, decimal_places=6, help_text="GPS Latitude for departure point")
+    longitude = models.DecimalField(max_digits=9, decimal_places=6, help_text="GPS Longitude for departure point")
+    
     # Calculated price based on guide's pricing structure
     price = models.DecimalField(max_digits=10, decimal_places=2)
     

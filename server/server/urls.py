@@ -45,11 +45,18 @@ urlpatterns = [
     path('v1/bookings/', include('bookings.urls')),
     path('v1/reviews/', include('reviews.urls')),
     path('v1/wilayas/', include('locations.urls')),
+    path('v1/messaging/', include('messaging.urls')),
     
     # Health and metrics
     path('v1/health/', health_check, name='health-check'),
     path('v1/metrics/', metrics, name='metrics'),
 ]
+
+# Customize admin site
+admin.site.site_header = "DZ-TourGuide Administration"
+admin.site.site_title = "DZ-TourGuide Admin Portal"
+admin.site.index_title = "Welcome to DZ-TourGuide Administration"
+admin.site.site_url = "/"
 
 # Serve media files in development
 if settings.DEBUG:

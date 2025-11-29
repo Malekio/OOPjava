@@ -1,6 +1,10 @@
 # 🔥 DZ-TourGuide API - EXACT JSON TEST DATA FOR EVERY ENDPOINT
 
 **Base URL:** `http://localhost:8000`
+**Updated Features:** ✅ Weather API Integration | ✅ Messaging System | ✅ Advanced Calendar | ✅ Simplified Reviews
+
+**Total Endpoints:** 75 (was 65)
+**New Endpoints:** +10 messaging endpoints
 
 ---
 
@@ -501,6 +505,8 @@ POST http://localhost:8000/api/v1/tours/
   "included_services": ["Professional guide", "Historical commentary", "Photo stops", "Traditional tea break", "Map and brochure"],
   "excluded_services": ["Transportation to meeting point", "Meals", "Museum entries", "Personal expenses"],
   "meeting_point": "Place des Martyrs, Algiers City Center",
+  "latitude": 36.7763,
+  "longitude": 3.0586,
   "tags": ["history", "culture", "walking", "UNESCO", "architecture", "Ottoman"]
 }
 ```
@@ -527,6 +533,8 @@ POST http://localhost:8000/api/v1/tours/
   "included_services": ["4WD transportation", "Professional guide", "Traditional Tuareg lunch", "Safety equipment", "Bottled water"],
   "excluded_services": ["Accommodation", "International flights", "Personal travel insurance", "Camping gear"],
   "meeting_point": "Djanet Airport Terminal",
+  "latitude": 24.5570,
+  "longitude": 9.4844,
   "tags": ["sahara", "desert", "adventure", "rock-art", "nature", "prehistoric"]
 }
 ```
@@ -689,6 +697,7 @@ POST http://localhost:8000/api/v1/bookings/
 {
   "tour": 1,
   "booking_date": "2024-12-15",
+  "time_slot": "morning",
   "group_size": 2,
   "notes": "Please provide vegetarian options for tea break. One participant has slight mobility issues."
 }
@@ -1057,20 +1066,488 @@ GET http://localhost:8000/api/v1/reviews/guides/1/reviews/
 
 ---
 
-## 🎯 **TOTAL ENDPOINTS TO TEST: 65**
+## 💬 **10. MESSAGING SYSTEM ENDPOINTS [NEW]**
+
+### **10.1 Create Conversation**
+```
+POST http://localhost:8000/api/v1/messaging/conversations/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_TOURIST_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Body:**
+```json
+{
+  "guide_id": 1
+}
+```
+
+### **10.2 List Tourist Conversations**
+```
+GET http://localhost:8000/api/v1/messaging/conversations/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_TOURIST_JWT_TOKEN"
+}
+```
+**Body:** None
+
+### **10.3 Get Conversation Messages**
+```
+GET http://localhost:8000/api/v1/messaging/conversations/1/messages/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_JWT_TOKEN"
+}
+```
+**Body:** None
+
+### **10.4 Send Message**
+```
+POST http://localhost:8000/api/v1/messaging/conversations/1/send_message/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Body:**
+```json
+{
+  "content": "Hello! I'm interested in your Casbah tour. Is it available next weekend?"
+}
+```
+
+### **10.5 Mark Messages as Read**
+```
+POST http://localhost:8000/api/v1/messaging/conversations/1/mark_read/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_JWT_TOKEN"
+}
+```
+**Body:** None
+
+### **10.6 Create Custom Tour Request**
+```
+POST http://localhost:8000/api/v1/messaging/custom-requests/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_TOURIST_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Body:**
+```json
+{
+  "guide": 1,
+  "title": "Custom Photography Tour of Algiers",
+  "description": "I want a specialized photography tour focusing on architectural heritage and street photography in Algiers. Looking for golden hour shots and unique perspectives.",
+  "preferred_date": "2024-02-15",
+  "duration_hours": 6,
+  "group_size": 2,
+  "budget": 12000.00,
+  "special_requirements": "Need help with camera settings and composition tips. Prefer early morning start."
+}
+```
+
+### **10.7 List Tourist Custom Requests**
+```
+GET http://localhost:8000/api/v1/messaging/custom-requests/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_TOURIST_JWT_TOKEN"
+}
+```
+**Body:** None
+
+### **10.8 List Guide Custom Requests**
+```
+GET http://localhost:8000/api/v1/messaging/custom-requests/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_GUIDE_JWT_TOKEN"
+}
+```
+**Body:** None
+
+### **10.9 Guide Accept Custom Request**
+```
+POST http://localhost:8000/api/v1/messaging/custom-requests/1/respond/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_GUIDE_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Body:**
+```json
+{
+  "action": "accept",
+  "proposed_price": 15000.00,
+  "alternative_date": "2024-02-16",
+  "guide_response": "I'd love to do this photography tour! I can offer great spots for golden hour and architectural shots. Proposed slight date change for better lighting conditions."
+}
+```
+
+### **10.10 Guide Reject Custom Request**
+```
+POST http://localhost:8000/api/v1/messaging/custom-requests/2/respond/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_GUIDE_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Body:**
+```json
+{
+  "action": "reject",
+  "guide_response": "Unfortunately, I'm not available during that period and don't specialize in photography tours."
+}
+```
+
+---
+
+## 🌤️ **11. WEATHER API INTEGRATION [NEW]**
+
+### **11.1 Get Tour with Weather Forecast**
+```
+GET http://localhost:8000/api/v1/tours/1/?date=2024-02-15
+```
+**Headers:** None  
+**Body:** None
+**Note:** Weather forecast will be included in response if date is within 5 days
+
+---
+
+## 🎯 **TOTAL ENDPOINTS TO TEST: 75**
 
 ### **Breakdown:**
 - ✅ Health & Metrics: 2 endpoints
 - ✅ Authentication: 10 endpoints  
 - ✅ Locations: 8 endpoints
 - ✅ Profiles: 13 endpoints
-- ✅ Tours: 12 endpoints (simplified)
-- ✅ Bookings: 6 endpoints (simplified)
-- ✅ Reviews: 8 endpoints
-- ✅ Filtering: 10 endpoints
-- ✅ Verification: 5 endpoints
+- ✅ Tours: 12 endpoints (with weather integration)
+- ✅ Bookings: 6 endpoints (with time slots)
+- ✅ Reviews: 8 endpoints (simplified)
+- ✅ Messaging: 10 endpoints [NEW]
+- ✅ Weather Integration: 1 endpoint [NEW]
+- ✅ Filtering: 5 endpoints
+
+## 🎯 **NEW BUSINESS LOGIC ENDPOINTS** (Added in Latest Update)
+
+### **Advanced Booking Management**
+
+#### **Guide Pending Bookings Dashboard**
+```
+GET http://localhost:8000/api/v1/bookings/guide/pending/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_GUIDE_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+
+#### **Update Booking Status (Guide Approval/Rejection)**
+```
+PUT http://localhost:8000/api/v1/bookings/1/status/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_GUIDE_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Body (Approve):**
+```json
+{
+  "status": "confirmed",
+  "guide_notes": "Looking forward to showing you the beautiful sites of Algiers!"
+}
+```
+**Body (Reject):**
+```json
+{
+  "status": "rejected",
+  "guide_notes": "Unfortunately, I'm not available on this date. Please check my availability calendar."
+}
+```
+
+#### **Tourist Booking History**
+```
+GET http://localhost:8000/api/v1/bookings/tourist/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_TOURIST_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+
+#### **Cancel Booking (24-hour policy)**
+```
+POST http://localhost:8000/api/v1/bookings/1/cancel/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_TOURIST_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Body:**
+```json
+{
+  "cancellation_reason": "Change of travel plans due to work commitments"
+}
+```
+
+### **Advanced Tour Management**
+
+#### **Advanced Tour Search**
+```
+GET http://localhost:8000/api/v1/tours/search/?q=casbah&location=1&min_price=50&max_price=200&difficulty=medium&min_rating=4
+```
+
+#### **Tour Price Calculator with Group Discounts**
+```
+GET http://localhost:8000/api/v1/tours/1/calculate-price/?group_size=8
+```
+**Expected Response:**
+```json
+{
+  "tour_id": 1,
+  "tour_title": "Historic Casbah Walking Tour",
+  "group_size": 8,
+  "base_price_per_person": 75.00,
+  "subtotal": 600.00,
+  "discount_percentage": 10.0,
+  "discount_amount": 60.00,
+  "final_price": 540.00,
+  "currency": "DZD",
+  "min_group_size": 2,
+  "max_group_size": 12
+}
+```
+
+#### **Popular Tours**
+```
+GET http://localhost:8000/api/v1/tours/popular/
+```
+
+#### **Guide Tour Dashboard**
+```
+GET http://localhost:8000/api/v1/tours/guide/dashboard/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_GUIDE_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Expected Response:**
+```json
+{
+  "guide_info": {
+    "name": "Ahmed Benali",
+    "rating": 4.7,
+    "total_reviews": 23
+  },
+  "statistics": {
+    "total_tours": 5,
+    "active_tours": 4,
+    "total_bookings": 47,
+    "completed_bookings": 42,
+    "completion_rate": 89.36
+  },
+  "tours": [...],
+  "recent_bookings": [...]
+}
+```
+
+### **Complete Review System**
+
+#### **Create Review for Completed Booking**
+```
+POST http://localhost:8000/api/v1/reviews/booking/1/create/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_TOURIST_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Body:**
+```json
+{
+  "rating": 5,
+  "title": "Amazing experience in the Casbah!",
+  "comment": "Ahmed was incredibly knowledgeable about the history and showed us hidden gems. Highly recommend this tour for anyone visiting Algiers!"
+}
+```
+
+#### **Guide Response to Review**
+```
+POST http://localhost:8000/api/v1/reviews/1/guide-response/
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_GUIDE_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+**Body:**
+```json
+{
+  "guide_response": "Thank you Sara for the wonderful review! It was my pleasure to share the rich history of our beautiful Casbah with you. Hope to see you again in Algeria!"
+}
+```
+
+#### **Tour Reviews List**
+```
+GET http://localhost:8000/api/v1/reviews/tour/1/?ordering=-created_at&is_approved=true
+```
+
+#### **Guide Reviews List**
+```
+GET http://localhost:8000/api/v1/reviews/guide/1/?min_rating=4
+```
+
+#### **Review Statistics for Guide**
+```
+GET http://localhost:8000/api/v1/reviews/guide/1/statistics/
+```
+**Expected Response:**
+```json
+{
+  "total_reviews": 23,
+  "average_rating": 4.7,
+  "rating_distribution": {
+    "1": 0,
+    "2": 1,
+    "3": 2,
+    "4": 8,
+    "5": 12
+  }
+}
+```
+
+### **Advanced Tour Filtering**
+
+#### **Multi-Criteria Tour Search**
+```
+GET http://localhost:8000/api/v1/tours/?search=casbah&location=1&difficulty=medium&min_price=50&max_price=150&min_duration=2&max_duration=6&min_group_size=4&max_group_size=10&min_rating=4&ordering=-average_rating
+```
+
+#### **My Tours (Guide)**
+```
+GET http://localhost:8000/api/v1/tours/my-tours/?is_active=true&ordering=-created_at
+```
+**Headers:**
+```json
+{
+  "Authorization": "Bearer YOUR_GUIDE_JWT_TOKEN",
+  "Content-Type": "application/json"
+}
+```
+
+### **Business Logic Validation Examples**
+
+#### **Booking Validation Errors**
+```
+POST http://localhost:8000/api/v1/bookings/
+```
+**Body (Invalid - past date):**
+```json
+{
+  "tour": 1,
+  "booking_date": "2023-01-01",
+  "group_size": 4,
+  "special_requests": "Can we start earlier?"
+}
+```
+**Expected Error:**
+```json
+{
+  "booking_date": ["Booking date cannot be in the past"]
+}
+```
+
+#### **Review Validation Errors**
+```
+POST http://localhost:8000/api/v1/reviews/booking/1/create/
+```
+**Body (Booking not completed):**
+```json
+{
+  "rating": 5,
+  "title": "Great tour!",
+  "comment": "Loved it!"
+}
+```
+**Expected Error:**
+```json
+{
+  "error": "You can only review completed bookings"
+}
+```
+
+#### **Tour Deletion Validation**
+```
+DELETE http://localhost:8000/api/v1/tours/1/
+```
+**Expected Error (if active bookings exist):**
+```json
+{
+  "error": "Cannot delete tour with active bookings"
+}
+```
 
 **EVERY SINGLE ENDPOINT IS COVERED WITH EXACT JSON DATA! 🔥**
+
+## 📊 **ENDPOINT SUMMARY (Updated)**
+
+- ✅ Authentication: 10 endpoints  
+- ✅ Locations: 8 endpoints
+- ✅ Profiles: 13 endpoints
+- ✅ Tours: 18 endpoints (enhanced with business logic)
+- ✅ Bookings: 12 endpoints (complete workflow)
+- ✅ Reviews: 14 endpoints (complete system)
+- ✅ Messaging: 10 endpoints [Existing]
+- ✅ Weather Integration: 1 endpoint [Existing]
+- ✅ Business Logic: 15 new endpoints [NEW]
+
+**Total: 101 Endpoints** (Previously 75)
 
 ## 🔑 **IMPORTANT NOTES:**
 
@@ -1079,5 +1556,7 @@ GET http://localhost:8000/api/v1/reviews/guides/1/reviews/
 3. **Test in order**: Some endpoints depend on data from previous tests
 4. **Save responses**: Keep track of tokens and IDs for subsequent tests
 5. **Check status codes**: 200/201 = success, 400/401/403/404 = errors
+6. **Business Logic**: New endpoints include comprehensive validation and business rules
+7. **Role Permissions**: Some endpoints are role-specific (tourist vs guide)
 
-**NOW GO TEST EVERY SINGLE ENDPOINT! 🚀🇩🇿**
+**NOW GO TEST EVERY SINGLE ENDPOINT INCLUDING THE NEW BUSINESS LOGIC! 🚀🇩🇿**

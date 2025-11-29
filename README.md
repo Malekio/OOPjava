@@ -10,12 +10,15 @@ DZ-TourGuide connects tourists with certified local guides for personalized tour
 
 - **Dual User Profiles**: Separate registration/login for Tourists and Guides
 - **Guide Profiles**: Public profiles with photos, bio, languages, coverage areas, certifications
-- **Tour Management**: Guides create predefined tours with descriptions, pricing, and photos
+- **Tour Management**: Guides create predefined tours with GPS coordinates for weather integration
 - **Tour Directory**: Tourists browse and search tours by city/wilaya
-- **Booking System**: Request-based booking with guide approval workflow
+- **🌤️ Weather Integration**: Real-time weather forecasts for tour locations (5-day window)
+- **📅 Advanced Calendar**: Time slot management (morning/afternoon/evening/full-day)
+- **💬 Messaging System**: Tourist-Guide communication & custom tour requests
+- **Booking System**: Request-based booking with guide approval and time slot validation
 - **Flexible Pricing**: Half-day, full-day, and extra-hour pricing structure
 - **Coverage Zones**: Guides specify covered wilayas with validation
-- **Review System**: Tourist reviews for completed tours
+- **⭐ Simplified Review System**: Streamlined 1-5 star rating system
 - **Admin Panel**: Guide verification and platform management
 
 ## 🛠️ Technical Stack
@@ -23,8 +26,9 @@ DZ-TourGuide connects tourists with certified local guides for personalized tour
 - **Backend**: Django 4.2 + Django REST Framework
 - **Authentication**: JWT (djangorestframework-simplejwt)
 - **Database**: SQLite (dev) / PostgreSQL (production)
+- **Weather API**: OpenWeatherMap integration
 - **File Storage**: Local (dev) / AWS S3 (production)
-- **Caching**: Redis
+- **Caching**: Redis (includes weather data caching)
 - **Task Queue**: Celery
 - **API Documentation**: Auto-generated with DRF
 
@@ -78,6 +82,8 @@ python manage.py runserver
 The API will be available at `http://localhost:8000/api/v1/`
 
 ## 🔗 API Endpoints
+
+**Total Endpoints**: 101+ | **Complete Business Logic**: Booking workflows, Review system, Advanced search & filtering
 
 ### Authentication & User Management
 ```
@@ -145,6 +151,23 @@ GET    /api/v1/wilayas/{id}/guides/  # Guides in wilaya
 GET    /api/v1/wilayas/{id}/tours/   # Tours in wilaya
 ```
 
+### Messaging System [NEW]
+```
+GET    /api/v1/messaging/conversations/          # List conversations
+POST   /api/v1/messaging/conversations/          # Create conversation
+GET    /api/v1/messaging/conversations/{id}/messages/  # Get messages
+POST   /api/v1/messaging/conversations/{id}/send_message/  # Send message
+POST   /api/v1/messaging/conversations/{id}/mark_read/     # Mark as read
+GET    /api/v1/messaging/custom-requests/        # List custom requests
+POST   /api/v1/messaging/custom-requests/        # Create custom request
+POST   /api/v1/messaging/custom-requests/{id}/respond/    # Guide response
+```
+
+### Weather Integration [NEW]
+```
+GET    /api/v1/tours/{id}/?date=YYYY-MM-DD      # Tour with weather forecast
+```
+
 ### System Health
 ```
 GET    /api/v1/health/               # Health check
@@ -192,9 +215,16 @@ GET    /api/v1/metrics/              # Platform metrics
 
 ### Core Models
 - **User**: Custom user model with type field (tourist/guide/admin)
-- **Wilaya**: Algerian administrative divisions
+- **Wilaya**: Algerian administrative divisions (58 wilayas)
 - **TouristProfile**: Tourist preferences and info
 - **GuideProfile**: Guide details, pricing, coverage areas
+- **GuideAvailability**: [NEW] Time slot calendar management
+- **Tour**: Tour packages with GPS coordinates for weather integration
+- **Booking**: Booking system with time slot support
+- **Review**: Simplified rating system (1-5 stars)
+- **Conversation**: [NEW] Tourist-Guide messaging
+- **Message**: [NEW] Messages within conversations  
+- **CustomTourRequest**: [NEW] Custom tour request system
 - **GuideCertification**: Guide certification documents
 - **Tour**: Tour packages with pricing, details, and single image
 - **Booking**: Simple booking system
@@ -249,6 +279,7 @@ DB_NAME=production_db
 DB_USER=production_user
 DB_PASSWORD=secure_password
 REDIS_URL=redis://production-redis:6379/0
+OPENWEATHER_API_KEY=your-openweather-api-key
 ```
 
 2. **Database Migration**
@@ -307,18 +338,24 @@ For support and questions:
 - [x] Location data (wilayas)
 - [x] Guide/Tourist profile management
 
-### Phase 2 🚧
-- [ ] Complete booking system
-- [ ] Review and rating system
-- [ ] Search and filtering
-- [ ] Payment integration
+### Phase 2 ✅ (COMPLETED)
+- [x] Complete booking system with guide approval workflow
+- [x] Review and rating system with business logic
+- [x] Advanced search and filtering
+- [x] Weather API integration
+- [x] Messaging system
+- [x] Time slot management
+- [x] Price calculation with group discounts
+- [x] Guide dashboard with statistics
+- [x] Business rule enforcement (24-hour cancellation, etc.)
 
-### Phase 3 📋
+### Phase 3 📋 (Future Enhancements)
 - [ ] Real-time notifications
-- [ ] Advanced analytics
+- [ ] Payment integration
+- [ ] Advanced analytics dashboard
 - [ ] Mobile app API optimization
 - [ ] Multi-language support
-- [ ] Weather API integration
+- [ ] Push notifications
 
 ---
 

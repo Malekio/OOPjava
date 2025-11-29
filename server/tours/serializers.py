@@ -31,6 +31,7 @@ class TourDetailSerializer(serializers.ModelSerializer):
     guide = GuideProfileListSerializer(read_only=True)
     wilaya = WilayaSerializer(read_only=True)
     image_url = serializers.SerializerMethodField()
+    weather_forecast = serializers.SerializerMethodField()
     
     class Meta:
         model = Tour
@@ -38,12 +39,29 @@ class TourDetailSerializer(serializers.ModelSerializer):
             'id', 'title', 'description', 'guide', 'wilaya',
             'duration_hours', 'price', 'max_group_size',
             'included_services', 'excluded_services', 'meeting_point',
-            'image_url', 'tags', 'created_at', 'updated_at', 'slug'
+            'latitude', 'longitude', 'image_url', 'tags', 
+            'weather_forecast', 'created_at', 'updated_at', 'slug'
         ]
     
     def get_image_url(self, obj):
         if obj.image:
             return self.context['request'].build_absolute_uri(obj.image.url)
+        return None
+    
+    def get_weather_forecast(self, obj):
+        """
+        Get weather forecast if date is provided in context
+        """
+        request = self.context.get('request')
+        if request and hasattr(request, 'query_params'):
+            booking_date = request.query_params.get('date')
+            if booking_date and obj.latitude and obj.longitude:
+                from server.utils.weather_service import WeatherService
+                return WeatherService.get_weather_forecast(
+                    float(obj.latitude), 
+                    float(obj.longitude), 
+                    booking_date
+                )
         return None
 
 class TourCreateUpdateSerializer(serializers.ModelSerializer):
@@ -55,8 +73,18 @@ class TourCreateUpdateSerializer(serializers.ModelSerializer):
         fields = [
             'title', 'description', 'wilaya', 'duration_hours',
             'max_group_size', 'included_services', 'excluded_services',
-            'meeting_point', 'tags', 'image'
+            'meeting_point', 'latitude', 'longitude', 'tags', 'image'
         ]
+    
+    def validate(self, data):
+        """
+        Validate GPS coordinates are provided
+        """
+        if not data.get('latitude') or not data.get('longitude'):
+            raise serializers.ValidationError(
+                "GPS coordinates (latitude and longitude) are required for weather integration."
+            )
+        return data
 
 class TourPriceCalculationSerializer(serializers.Serializer):
     """

@@ -40,24 +40,6 @@ class Review(models.Model):
     title = models.CharField(max_length=200)
     comment = models.TextField()
     
-    # Detailed ratings
-    communication_rating = models.PositiveIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)],
-        help_text="Guide communication rating"
-    )
-    knowledge_rating = models.PositiveIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)],
-        help_text="Guide knowledge rating"
-    )
-    punctuality_rating = models.PositiveIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)],
-        help_text="Guide punctuality rating"
-    )
-    value_rating = models.PositiveIntegerField(
-        validators=[MinValueValidator(1), MaxValueValidator(5)],
-        help_text="Value for money rating"
-    )
-    
     # Moderation
     is_approved = models.BooleanField(default=True)
     is_featured = models.BooleanField(default=False)
@@ -123,22 +105,3 @@ class Review(models.Model):
         self.guide.average_rating = guide_stats['avg_rating'] or 0
         self.guide.total_reviews = guide_stats['total_reviews'] or 0
         self.guide.save()
-
-class ReviewImage(models.Model):
-    """
-    Images attached to reviews
-    """
-    review = models.ForeignKey(
-        Review,
-        on_delete=models.CASCADE,
-        related_name='images'
-    )
-    image = models.ImageField(upload_to='reviews/images/')
-    caption = models.CharField(max_length=200, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    class Meta:
-        db_table = 'review_images'
-    
-    def __str__(self):
-        return f"Review image for {self.review.id}"

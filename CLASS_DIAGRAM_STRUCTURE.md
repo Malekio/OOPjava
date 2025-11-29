@@ -5,10 +5,11 @@
 ### **App Structure:**
 - **accounts**: User management
 - **locations**: Algerian administrative divisions  
-- **profiles**: Tourist & Guide profiles
-- **tours**: Tour packages  
-- **bookings**: Simple booking system
-- **reviews**: Rating and review system
+- **profiles**: Tourist & Guide profiles + Availability Calendar
+- **tours**: Tour packages with GPS coordinates for weather
+- **bookings**: Booking system with time slots
+- **reviews**: Simplified rating system 
+- **messaging**: Tourist-Guide communication & Custom requests
 
 ---
 
@@ -107,6 +108,22 @@
 └─────────────────────────────────────┘
 ```
 
+```
+┌─────────────────────────────────────┐
+│          GuideAvailability          │
+├─────────────────────────────────────┤
+│ + guide: ForeignKey(GuideProfile)   │
+│ + date: DateField                   │
+│ + time_slot: CharField              │
+│   - morning, afternoon, evening,    │
+│     full_day                        │
+│ + is_available: BooleanField        │
+│ + created_at: DateTimeField         │
+├─────────────────────────────────────┤
+│ UNIQUE(guide, date, time_slot)      │
+└─────────────────────────────────────┘
+```
+
 ### **4. 🏛️ TOURS APP**
 
 ```
@@ -122,6 +139,8 @@
 │ + included_services: JSONField      │
 │ + excluded_services: JSONField      │
 │ + meeting_point: CharField          │
+│ + latitude: DecimalField [NEW]      │
+│ + longitude: DecimalField [NEW]     │
 │ + price: DecimalField               │
 │ + status: CharField                 │
 │   - active, inactive, draft         │
@@ -133,6 +152,7 @@
 ├─────────────────────────────────────┤
 │ + clean(): method                   │
 │ + save(): method                    │
+│ + get_weather_forecast(): method    │
 └─────────────────────────────────────┘
 ```
 
@@ -145,6 +165,9 @@
 │ + tourist: FK(TouristProfile)       │
 │ + tour: ForeignKey(Tour)            │
 │ + booking_date: DateField           │
+│ + time_slot: CharField [NEW]        │
+│   - morning, afternoon, evening,    │
+│     full_day                        │
 │ + group_size: PositiveInt           │
 │ + total_price: DecimalField         │
 │ + status: CharField                 │
@@ -163,7 +186,7 @@
 
 ```
 ┌─────────────────────────────────────┐
-│            Review                   │
+│                 Review              │
 ├─────────────────────────────────────┤
 │ + tourist: FK(TouristProfile)       │
 │ + guide: FK(GuideProfile)           │
@@ -172,8 +195,6 @@
 │ + rating: PositiveInt (1-5)         │
 │ + title: CharField                  │
 │ + comment: TextField                │
-│ + communication_rating: PositiveInt │
-│ + knowledge_rating: PositiveInt     │
 │ + punctuality_rating: PositiveInt   │
 │ + value_rating: PositiveInt         │
 │ + is_approved: BooleanField         │
@@ -189,34 +210,85 @@
 └─────────────────────────────────────┘
 ```
 
+### **7. 💬 MESSAGING APP [NEW]**
+
 ```
 ┌─────────────────────────────────────┐
-│          ReviewImage                │
+│          Conversation               │
 ├─────────────────────────────────────┤
-│ + review: ForeignKey(Review)        │
-│ + image: ImageField                 │
-│ + caption: CharField                │
+│ + tourist: FK(TouristProfile)       │
+│ + guide: FK(GuideProfile)           │
+│ + subject: CharField                │
+│ + last_message_at: DateTimeField    │
 │ + created_at: DateTimeField         │
+├─────────────────────────────────────┤
+│ UNIQUE(tourist, guide)              │
+└─────────────────────────────────────┘
+```
+
+```
+┌─────────────────────────────────────┐
+│            Message                  │
+├─────────────────────────────────────┤
+│ + conversation: FK(Conversation)    │
+│ + sender_type: CharField            │
+│   - tourist, guide                  │
+│ + content: TextField                │
+│ + is_read: BooleanField             │
+│ + created_at: DateTimeField         │
+└─────────────────────────────────────┘
+```
+
+```
+┌─────────────────────────────────────┐
+│        CustomTourRequest            │
+├─────────────────────────────────────┤
+│ + tourist: FK(TouristProfile)       │
+│ + guide: FK(GuideProfile)           │
+│ + title: CharField                  │
+│ + description: TextField            │
+│ + preferred_date: DateField         │
+│ + duration_hours: PositiveInt       │
+│ + group_size: PositiveInt           │
+│ + budget: DecimalField              │
+│ + special_requirements: TextField   │
+│ + status: CharField                 │
+│   - pending, accepted, rejected,    │
+│     expired                         │
+│ + guide_response: TextField         │
+│ + proposed_price: DecimalField      │
+│ + alternative_date: DateField       │
+│ + created_at: DateTimeField         │
+│ + updated_at: DateTimeField         │
 └─────────────────────────────────────┘
 ```
 
 ---
 
-## 🔗 **Relationships Diagram**
+## 🔗 **Updated Relationships Diagram**
 
 ```
-User ──────┬─── 1:1 ─── TouristProfile
+User ──────┬─── 1:1 ─── TouristProfile ─── 1:M ─── Booking ─── 1:1 ─── Review
+           │                        │
+           │                        └─── 1:M ─── Conversation ─── 1:M ─── Message
+           │                        │
+           │                        └─── 1:M ─── CustomTourRequest
            │
            └─── 1:1 ─── GuideProfile ─── 1:M ─── GuideCertification
+                            │          │
+                            │          └─── 1:M ─── GuideAvailability
                             │
                             │─── M:M ─── Wilaya
                             │
-                            └─── 1:M ─── Tour ─── 1:M ─── Booking ─── 1:1 ─── Review ─── 1:M ─── ReviewImage
-
-TouristProfile ─── 1:M ─── Booking
-TouristProfile ─── 1:M ─── Review
+                            │─── 1:M ─── Tour (with GPS coordinates)
+                            │
+                            │─── 1:M ─── Conversation
+                            │
+                            └─── 1:M ─── CustomTourRequest
 
 Wilaya ─── 1:M ─── Tour
+Tour ─── 1:M ─── Booking
+Tour ─── Weather API Integration (via GPS coordinates)
 ```
 
 ---

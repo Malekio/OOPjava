@@ -1,0 +1,141 @@
+{% extends "admin/index.html" %}
+{% load static %}
+
+{% block title %}DZ-TourGuide Admin Dashboard{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+<style>
+    .dashboard-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+    }
+    
+    .stat-card {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        border-left: 4px solid #007cba;
+    }
+    
+    .stat-card h3 {
+        margin: 0 0 10px 0;
+        color: #007cba;
+        font-size: 1.2em;
+    }
+    
+    .stat-number {
+        font-size: 2em;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .stat-label {
+        color: #666;
+        font-size: 0.9em;
+    }
+    
+    .quick-actions {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+    
+    .quick-actions h3 {
+        margin: 0 0 15px 0;
+        color: #495057;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .action-btn {
+        background: #007cba;
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 0.9em;
+        transition: background 0.2s;
+    }
+    
+    .action-btn:hover {
+        background: #005a87;
+        color: white;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-stats">
+    <div class="stat-card">
+        <h3>Total Users</h3>
+        <div class="stat-number">{{ total_users|default:0 }}</div>
+        <div class="stat-label">Registered users</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>Active Guides</h3>
+        <div class="stat-number">{{ verified_guides|default:0 }}</div>
+        <div class="stat-label">Verified guides</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>Published Tours</h3>
+        <div class="stat-number">{{ active_tours|default:0 }}</div>
+        <div class="stat-label">Available tours</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>Total Bookings</h3>
+        <div class="stat-number">{{ total_bookings|default:0 }}</div>
+        <div class="stat-label">All time bookings</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>Pending Reviews</h3>
+        <div class="stat-number">{{ pending_reviews|default:0 }}</div>
+        <div class="stat-label">Awaiting approval</div>
+    </div>
+    
+    <div class="stat-card">
+        <h3>Revenue</h3>
+        <div class="stat-number">${{ total_revenue|default:0 }}</div>
+        <div class="stat-label">Total platform revenue</div>
+    </div>
+</div>
+
+<div class="quick-actions">
+    <h3>Quick Actions</h3>
+    <div class="action-buttons">
+        <a href="{% url 'admin:profiles_guideprofile_changelist' %}" class="action-btn">
+            Manage Guides
+        </a>
+        <a href="{% url 'admin:tours_tour_changelist' %}" class="action-btn">
+            Manage Tours
+        </a>
+        <a href="{% url 'admin:bookings_booking_changelist' %}" class="action-btn">
+            View Bookings
+        </a>
+        <a href="{% url 'admin:reviews_review_changelist' %}" class="action-btn">
+            Moderate Reviews
+        </a>
+        <a href="{% url 'admin:messaging_customtourrequest_changelist' %}" class="action-btn">
+            Custom Requests
+        </a>
+        <a href="{% url 'admin:profiles_guidecertification_changelist' %}" class="action-btn">
+            Verify Certifications
+        </a>
+    </div>
+</div>
+
+{{ block.super }}
+{% endblock %}

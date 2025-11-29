@@ -27,6 +27,16 @@ class Booking(models.Model):
     
     # Booking details
     booking_date = models.DateField()
+    time_slot = models.CharField(
+        max_length=20,
+        choices=[
+            ('morning', 'Morning (8:00-12:00)'),
+            ('afternoon', 'Afternoon (13:00-17:00)'), 
+            ('evening', 'Evening (18:00-22:00)'),
+            ('full_day', 'Full Day (8:00-17:00)'),
+        ],
+        default='morning'
+    )
     group_size = models.PositiveIntegerField(default=1)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     

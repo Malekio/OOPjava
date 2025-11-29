@@ -1,0 +1,49 @@
+/* Custom CSS for Reviews Admin */
+.field-rating_stars {
+    font-size: 1.2em;
+}
+
+.rating-1 { color: #dc3545; }
+.rating-2 { color: #fd7e14; }
+.rating-3 { color: #ffc107; }
+.rating-4 { color: #20c997; }
+.rating-5 { color: #28a745; }
+
+.review-approved {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.review-pending {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.review-stats {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.review-stats .stat-item {
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.review-stats .stat-number {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007cba;
+}
+
+.review-stats .stat-label {
+    font-size: 0.9em;
+    color: #666;
+}

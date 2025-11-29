@@ -111,6 +111,38 @@ class GuideProfile(models.Model):
             extra_hours = duration_hours - 8
             return self.full_day_price + (extra_hours * self.extra_hour_price)
 
+class GuideAvailability(models.Model):
+    """
+    Guide availability calendar for advanced time slot management
+    """
+    TIME_SLOTS = [
+        ('morning', 'Morning (8:00-12:00)'),
+        ('afternoon', 'Afternoon (13:00-17:00)'),
+        ('evening', 'Evening (18:00-22:00)'),
+        ('full_day', 'Full Day (8:00-17:00)'),
+    ]
+    
+    guide = models.ForeignKey(
+        GuideProfile,
+        on_delete=models.CASCADE,
+        related_name='availability_slots'
+    )
+    date = models.DateField()
+    time_slot = models.CharField(max_length=20, choices=TIME_SLOTS)
+    is_available = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        db_table = 'guide_availability'
+        unique_together = ['guide', 'date', 'time_slot']
+        indexes = [
+            models.Index(fields=['guide', 'date']),
+            models.Index(fields=['date', 'is_available']),
+        ]
+    
+    def __str__(self):
+        return f"{self.guide.user.username} - {self.date} ({self.time_slot})"
+
 class GuideCertification(models.Model):
     """
     Guide certifications and documents

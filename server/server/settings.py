@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'bookings',
     'reviews',
     'locations',
+    'messaging',
 ]
 
 MIDDLEWARE = [
@@ -231,6 +232,8 @@ LOGGING = {
     },
 }
 
-# Default primary key field type
+# Weather API Configuration
+OPENWEATHER_API_KEY = config('OPENWEATHER_API_KEY', default='')
 
+# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
