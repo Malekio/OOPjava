@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import TouristProfile, GuideProfile, GuideCertification
+from .models import TouristProfile, GuideProfile, GuideCertification, GuideAvailability
 from locations.models import Wilaya
 from accounts.serializers import UserSerializer
 
@@ -104,3 +104,57 @@ class GuidePricingSerializer(serializers.ModelSerializer):
     class Meta:
         model = GuideProfile
         fields = ['half_day_price', 'full_day_price', 'extra_hour_price']
+
+class GuideAvailabilitySerializer(serializers.ModelSerializer):
+    """
+    Serializer for Guide Availability management
+    """
+    class Meta:
+        model = GuideAvailability
+        fields = ['id', 'date', 'time_slot', 'is_available', 'created_at']
+        read_only_fields = ['id', 'created_at']
+    
+    def validate_date(self, value):
+        """
+        Ensure guides can't set availability for past dates
+        """
+        from django.utils import timezone
+        if value < timezone.now().date():
+            raise serializers.ValidationError("Cannot set availability for past dates")
+        return value
+
+class GuideAvailabilityBulkSerializer(serializers.Serializer):
+    """
+    Serializer for bulk availability operations
+    """
+    start_date = serializers.DateField()
+    end_date = serializers.DateField()
+    time_slots = serializers.MultipleChoiceField(
+        choices=GuideAvailability.TIME_SLOTS,
+        allow_empty=False
+    )
+    is_available = serializers.BooleanField(default=True)
+    
+    def validate(self, data):
+        """
+        Validate date range
+        """
+        from django.utils import timezone
+        from datetime import timedelta
+        
+        start_date = data['start_date']
+        end_date = data['end_date']
+        
+        # Check if dates are not in the past
+        if start_date < timezone.now().date():
+            raise serializers.ValidationError("Start date cannot be in the past")
+        
+        # Check if end date is after start date
+        if end_date < start_date:
+            raise serializers.ValidationError("End date must be after start date")
+        
+        # Limit range to prevent abuse (max 90 days)
+        if (end_date - start_date).days > 90:
+            raise serializers.ValidationError("Date range cannot exceed 90 days")
+        
+        return data

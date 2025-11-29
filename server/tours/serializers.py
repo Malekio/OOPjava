@@ -78,12 +78,24 @@ class TourCreateUpdateSerializer(serializers.ModelSerializer):
     
     def validate(self, data):
         """
-        Validate GPS coordinates are provided
+        Validate GPS coordinates are provided for new tours or when being updated
         """
-        if not data.get('latitude') or not data.get('longitude'):
-            raise serializers.ValidationError(
-                "GPS coordinates (latitude and longitude) are required for weather integration."
-            )
+        # For updates (PATCH), only validate if latitude or longitude is being changed
+        if self.instance:  # This is an update
+            # Only validate if either coordinate is being updated
+            if 'latitude' in data or 'longitude' in data:
+                # If one is provided, both must be provided
+                latitude = data.get('latitude', self.instance.latitude)
+                longitude = data.get('longitude', self.instance.longitude)
+                if not latitude or not longitude:
+                    raise serializers.ValidationError(
+                        "Both latitude and longitude are required for weather integration."
+                    )
+        else:  # This is a create operation
+            if not data.get('latitude') or not data.get('longitude'):
+                raise serializers.ValidationError(
+                    "GPS coordinates (latitude and longitude) are required for weather integration."
+                )
         return data
 
 class TourPriceCalculationSerializer(serializers.Serializer):

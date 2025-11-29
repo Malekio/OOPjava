@@ -51,41 +51,11 @@ class ReviewSerializer(serializers.ModelSerializer):
 class ReviewCreateSerializer(serializers.ModelSerializer):
     """
     Serializer for creating reviews
+    booking_id comes from URL parameter, not request body
     """
-    booking_id = serializers.IntegerField(write_only=True)
-    
     class Meta:
         model = Review
-        fields = ['booking_id', 'rating', 'title', 'comment']
-    
-    def validate_booking_id(self, value):
-        """Validate booking exists and is completed"""
-        try:
-            booking = Booking.objects.get(id=value)
-        except Booking.DoesNotExist:
-            raise serializers.ValidationError("Invalid booking ID.")
-        
-        # Check if booking is completed
-        if booking.status != 'completed':
-            raise serializers.ValidationError(
-                "You can only review completed bookings."
-            )
-        
-        # Check if review already exists
-        if hasattr(booking, 'review'):
-            raise serializers.ValidationError(
-                "A review already exists for this booking."
-            )
-        
-        # Check if user is the tourist who made the booking
-        request = self.context.get('request')
-        if (request and hasattr(request.user, 'tourist_profile') and 
-            booking.tourist != request.user.tourist_profile):
-            raise serializers.ValidationError(
-                "You can only review your own bookings."
-            )
-        
-        return value
+        fields = ['rating', 'title', 'comment']
     
     def validate_rating(self, value):
         """Validate rating is between 1 and 5"""

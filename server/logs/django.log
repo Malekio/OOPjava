@@ -679,3 +679,1990 @@ WARNING 2025-11-29 19:27:24,246 log 16364 139686620157632 Not Found: /favicon.ic
 WARNING 2025-11-29 19:34:41,473 log 16364 139686620157632 Not Found: /favicon.ico
 WARNING 2025-11-29 19:34:47,995 log 16364 139686620157632 Not Found: /favicon.ico
 WARNING 2025-11-29 19:34:50,738 log 16364 139686026671808 Not Found: /favicon.ico
+ERROR 2025-11-29 20:16:25,373 exceptions 16364 139686620157632 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:16:25,373 log 16364 139686620157632 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:16:28,423 exceptions 16364 139686620157632 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:16:28,423 log 16364 139686620157632 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:17:39,352 exceptions 16364 139686001493696 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:17:39,352 log 16364 139686001493696 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:17:41,301 exceptions 16364 139686001493696 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:17:41,302 log 16364 139686001493696 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:20:56,140 exceptions 16364 139686009886400 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:20:56,141 log 16364 139686009886400 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:20:58,613 exceptions 16364 139686009886400 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:20:58,614 log 16364 139686009886400 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:21:05,963 exceptions 16364 139686009886400 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:21:05,963 log 16364 139686009886400 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:25:46,216 exceptions 16364 139686018279104 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:25:46,216 log 16364 139686018279104 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:25:54,778 exceptions 16364 139686018279104 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:25:54,778 log 16364 139686018279104 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:26:47,310 exceptions 16364 139686018279104 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:26:47,311 log 16364 139686018279104 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:26:58,338 log 16364 139686018279104 Internal Server Error: /v1/profiles/guides/5/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 20:27:12,029 exceptions 16364 139686018279104 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:27:12,030 log 16364 139686018279104 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:27:15,664 exceptions 16364 139686018279104 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:27:15,664 log 16364 139686018279104 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:29:07,676 exceptions 16364 139685984708288 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:29:07,676 log 16364 139685984708288 Forbidden: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 20:29:16,160 exceptions 16364 139685984708288 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:29:16,160 log 16364 139685984708288 Forbidden: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 20:31:54,203 exceptions 16364 139685993100992 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:31:54,203 log 16364 139685993100992 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:31:56,423 exceptions 16364 139685993100992 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:31:56,423 log 16364 139685993100992 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:31:57,595 exceptions 16364 139685993100992 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:31:57,596 log 16364 139685993100992 Forbidden: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:31:59,931 exceptions 16364 139685993100992 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:31:59,932 log 16364 139685993100992 Forbidden: /v1/profiles/guides/me/
+INFO 2025-11-29 20:34:37,910 autoreload 16364 139687277178624 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:34:38,394 autoreload 22538 139986156760832 Watching for file changes with StatReloader
+ERROR 2025-11-29 20:34:39,666 log 22538 139985819793088 Internal Server Error: /v1/profiles/guides/me/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 256, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 47, in get_object
+    return self.request.user.guide_profile
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 492, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+accounts.models.User.guide_profile.RelatedObjectDoesNotExist: User has no guide_profile.. Did you mean: 'tourist_profile'?
+ERROR 2025-11-29 20:34:45,336 log 22538 139985819793088 Internal Server Error: /v1/profiles/guides/me/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 256, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 47, in get_object
+    return self.request.user.guide_profile
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 492, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+accounts.models.User.guide_profile.RelatedObjectDoesNotExist: User has no guide_profile.. Did you mean: 'tourist_profile'?
+INFO 2025-11-29 20:34:52,032 autoreload 22538 139986156760832 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:34:52,444 autoreload 22605 140242235305728 Watching for file changes with StatReloader
+INFO 2025-11-29 20:35:00,981 autoreload 22605 140242235305728 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:35:01,395 autoreload 22630 139741844414208 Watching for file changes with StatReloader
+INFO 2025-11-29 20:35:02,736 autoreload 22630 139741844414208 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:35:03,168 autoreload 22644 140560352517888 Watching for file changes with StatReloader
+INFO 2025-11-29 20:35:05,521 autoreload 22644 140560352517888 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:35:06,069 autoreload 22656 140361613893376 Watching for file changes with StatReloader
+ERROR 2025-11-29 20:35:06,852 log 22656 140361208952512 Internal Server Error: /v1/profiles/guides/me/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 256, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 47, in get_object
+    return self.request.user.guide_profile
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 492, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+accounts.models.User.guide_profile.RelatedObjectDoesNotExist: User has no guide_profile.. Did you mean: 'tourist_profile'?
+ERROR 2025-11-29 20:35:08,318 log 22656 140361208952512 Internal Server Error: /v1/profiles/guides/me/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 256, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 47, in get_object
+    return self.request.user.guide_profile
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 492, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+accounts.models.User.guide_profile.RelatedObjectDoesNotExist: User has no guide_profile.. Did you mean: 'tourist_profile'?
+INFO 2025-11-29 20:35:14,589 autoreload 22656 140361613893376 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:35:15,013 autoreload 22706 140031062490880 Watching for file changes with StatReloader
+INFO 2025-11-29 20:35:19,381 autoreload 22706 140031062490880 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:35:19,845 autoreload 22729 140101978521344 Watching for file changes with StatReloader
+INFO 2025-11-29 20:35:25,282 autoreload 22774 140714604191488 Watching for file changes with StatReloader
+ERROR 2025-11-29 20:35:33,842 log 22774 140714197382848 Internal Server Error: /v1/profiles/guides/me/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 256, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 47, in get_object
+    return self.request.user.guide_profile
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 492, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+accounts.models.User.guide_profile.RelatedObjectDoesNotExist: User has no guide_profile.. Did you mean: 'tourist_profile'?
+INFO 2025-11-29 20:36:34,358 autoreload 22774 140714604191488 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:36:34,793 autoreload 22871 140335430811392 Watching for file changes with StatReloader
+ERROR 2025-11-29 20:36:37,053 exceptions 22871 140335023912640 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:36:37,054 log 22871 140335023912640 Forbidden: /v1/profiles/guides/me/
+INFO 2025-11-29 20:36:44,449 autoreload 22871 140335430811392 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:36:44,850 autoreload 22918 140195075034880 Watching for file changes with StatReloader
+ERROR 2025-11-29 20:36:48,926 log 22918 140194668869312 Internal Server Error: /v1/profiles/guides/me/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 256, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 47, in get_object
+    return self.request.user.guide_profile
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 492, in __get__
+    raise self.RelatedObjectDoesNotExist(
+    ...<2 lines>...
+    )
+accounts.models.User.guide_profile.RelatedObjectDoesNotExist: User has no guide_profile.. Did you mean: 'tourist_profile'?
+INFO 2025-11-29 20:39:00,771 autoreload 22918 140195075034880 /home/malek/projects/TourGuideDZ/server/profiles/permissions.py changed, reloading.
+INFO 2025-11-29 20:39:01,184 autoreload 23071 140084842209024 Watching for file changes with StatReloader
+ERROR 2025-11-29 20:39:07,883 exceptions 23071 140084435220160 API Error: 403 - {'detail': ErrorDetail(string='You do not have permission to perform this action.', code='permission_denied')}
+WARNING 2025-11-29 20:39:07,883 log 23071 140084435220160 Forbidden: /v1/profiles/guides/me/
+WARNING 2025-11-29 20:39:56,957 log 23071 140084040951488 Not Found: /favicon.ico
+INFO 2025-11-29 20:43:58,002 autoreload 23071 140084842209024 /home/malek/projects/TourGuideDZ/server/accounts/serializers.py changed, reloading.
+INFO 2025-11-29 20:43:58,570 autoreload 23460 140475311546112 Watching for file changes with StatReloader
+INFO 2025-11-29 20:46:34,311 autoreload 23602 140446606937856 Watching for file changes with StatReloader
+INFO 2025-11-29 20:47:01,355 autoreload 23602 140446606937856 /home/malek/projects/TourGuideDZ/server/accounts/serializers.py changed, reloading.
+INFO 2025-11-29 20:47:01,905 autoreload 23773 140215857585920 Watching for file changes with StatReloader
+ERROR 2025-11-29 20:48:17,155 exceptions 23773 140215448499904 API Error: 400 - {'profile_picture': [ErrorDetail(string='No file was submitted.', code='required')]}
+WARNING 2025-11-29 20:48:17,156 log 23773 140215448499904 Bad Request: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:48:40,961 exceptions 23773 140215448499904 API Error: 400 - {'profile_picture': [ErrorDetail(string='No file was submitted.', code='required')]}
+WARNING 2025-11-29 20:48:40,961 log 23773 140215448499904 Bad Request: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:48:47,222 exceptions 23773 140215440107200 API Error: 401 - {'detail': ErrorDetail(string='No active account found with the given credentials', code='no_active_account')}
+WARNING 2025-11-29 20:48:47,223 log 23773 140215440107200 Unauthorized: /v1/auth/login/
+ERROR 2025-11-29 20:50:00,281 exceptions 23773 140215448499904 API Error: 400 - {'profile_picture': [ErrorDetail(string='No file was submitted.', code='required')]}
+WARNING 2025-11-29 20:50:00,281 log 23773 140215448499904 Bad Request: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:50:13,774 exceptions 23773 140215448499904 API Error: 400 - {'profile_picture': [ErrorDetail(string='No file was submitted.', code='required')]}
+WARNING 2025-11-29 20:50:13,775 log 23773 140215448499904 Bad Request: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:50:17,841 exceptions 23773 140215448499904 API Error: 400 - {'profile_picture': [ErrorDetail(string='No file was submitted.', code='required')]}
+WARNING 2025-11-29 20:50:17,842 log 23773 140215448499904 Bad Request: /v1/profiles/guides/me/
+ERROR 2025-11-29 20:55:17,536 log 23773 140215440107200 Internal Server Error: /v1/profiles/guides/8/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 20:55:49,195 log 23773 140215440107200 Internal Server Error: /v1/profiles/guides/8/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 20:55:57,141 log 23773 140215440107200 Internal Server Error: /v1/profiles/guides/8/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 20:56:13,890 log 23773 140215440107200 Internal Server Error: /v1/profiles/guides/8/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:02:10,364 exceptions 23773 140215406536384 API Error: 400 - {'title': [ErrorDetail(string='This field is required.', code='required')], 'document': [ErrorDetail(string='No file was submitted.', code='required')]}
+WARNING 2025-11-29 21:02:10,364 log 23773 140215406536384 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:05:04,412 exceptions 23773 140215414929088 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:05:04,413 log 23773 140215414929088 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:05:15,870 exceptions 23773 140215414929088 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:05:15,870 log 23773 140215414929088 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:05:25,481 exceptions 23773 140215414929088 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:05:25,481 log 23773 140215414929088 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:05:36,244 exceptions 23773 140215414929088 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:05:36,244 log 23773 140215414929088 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:05:47,401 exceptions 23773 140215414929088 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:05:47,402 log 23773 140215414929088 Bad Request: /v1/profiles/guides/certifications/
+INFO 2025-11-29 21:05:52,053 autoreload 23773 140215857585920 /home/malek/projects/TourGuideDZ/server/profiles/views.py changed, reloading.
+INFO 2025-11-29 21:05:52,445 autoreload 25138 140210604404480 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:06:29,698 exceptions 25138 140210199328448 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:06:29,699 log 25138 140210199328448 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:06:42,325 exceptions 25138 140210199328448 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:06:42,325 log 25138 140210199328448 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:07:17,070 log 25138 140210199328448 Internal Server Error: /v1/profiles/guides/8/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(user__id=user_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+INFO 2025-11-29 21:07:38,245 autoreload 25138 140210604404480 /home/malek/projects/TourGuideDZ/server/profiles/views.py changed, reloading.
+INFO 2025-11-29 21:07:38,719 autoreload 25332 139761305063168 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:07:44,864 log 25332 139760907581120 Internal Server Error: /v1/profiles/guides/8/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+WARNING 2025-11-29 21:07:59,768 log 25332 139760907581120 Not Found: /v1/profiles/guides//pricing/
+ERROR 2025-11-29 21:09:19,729 log 25332 139760897091264 Internal Server Error: /admin/accounts/user/8/change/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1820, in _changeform_view
+    formsets, inline_instances = self._create_formsets(
+                                 ~~~~~~~~~~~~~~~~~~~~~^
+        request, obj, change=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2257, in _create_formsets
+    for FormSet, inline in self.get_formsets_with_inlines(*get_formsets_args):
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 907, in get_formsets_with_inlines
+    yield inline.get_formset(request, obj), inline
+          ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2436, in get_formset
+    return inlineformset_factory(self.parent_model, self.model, **defaults)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 1322, in inlineformset_factory
+    FormSet = modelformset_factory(model, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 1036, in modelformset_factory
+    form = modelform_factory(
+        model,
+    ...<9 lines>...
+        field_classes=field_classes,
+    )
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (verification_date, is_verified) specified for GuideProfile
+ERROR 2025-11-29 21:09:23,775 log 25332 139760897091264 Internal Server Error: /admin/accounts/user/7/change/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1820, in _changeform_view
+    formsets, inline_instances = self._create_formsets(
+                                 ~~~~~~~~~~~~~~~~~~~~~^
+        request, obj, change=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2257, in _create_formsets
+    for FormSet, inline in self.get_formsets_with_inlines(*get_formsets_args):
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 907, in get_formsets_with_inlines
+    yield inline.get_formset(request, obj), inline
+          ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2436, in get_formset
+    return inlineformset_factory(self.parent_model, self.model, **defaults)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 1322, in inlineformset_factory
+    FormSet = modelformset_factory(model, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 1036, in modelformset_factory
+    form = modelform_factory(
+        model,
+    ...<9 lines>...
+        field_classes=field_classes,
+    )
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (verification_date, is_verified) specified for GuideProfile
+ERROR 2025-11-29 21:09:26,939 log 25332 139760897091264 Internal Server Error: /admin/accounts/user/6/change/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 1820, in _changeform_view
+    formsets, inline_instances = self._create_formsets(
+                                 ~~~~~~~~~~~~~~~~~~~~~^
+        request, obj, change=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2257, in _create_formsets
+    for FormSet, inline in self.get_formsets_with_inlines(*get_formsets_args):
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 907, in get_formsets_with_inlines
+    yield inline.get_formset(request, obj), inline
+          ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/contrib/admin/options.py", line 2436, in get_formset
+    return inlineformset_factory(self.parent_model, self.model, **defaults)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 1322, in inlineformset_factory
+    FormSet = modelformset_factory(model, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 1036, in modelformset_factory
+    form = modelform_factory(
+        model,
+    ...<9 lines>...
+        field_classes=field_classes,
+    )
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/forms/models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (verification_date, is_verified) specified for GuideProfile
+WARNING 2025-11-29 21:09:52,185 log 25332 139760508069568 Not Found: /v1/profiles/guides//pricing/
+ERROR 2025-11-29 21:10:04,093 log 25332 139760508069568 Internal Server Error: /v1/profiles/guides/6/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:10:12,331 log 25332 139760508069568 Internal Server Error: /v1/profiles/guides/1/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:10:20,807 log 25332 139760508069568 Internal Server Error: /v1/profiles/guides/2/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:10:25,149 log 25332 139760508069568 Internal Server Error: /v1/profiles/guides/3/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:10:29,125 log 25332 139760508069568 Internal Server Error: /v1/profiles/guides/4/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:10:33,386 log 25332 139760508069568 Internal Server Error: /v1/profiles/guides/5/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:10:38,478 log 25332 139760508069568 Internal Server Error: /v1/profiles/guides/6/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:10:42,920 log 25332 139760508069568 Internal Server Error: /v1/profiles/guides/7/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:10:50,212 log 25332 139760508069568 Internal Server Error: /v1/profiles/guides/8/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 97, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:15:37,772 exceptions 25332 139760897091264 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:15:37,773 log 25332 139760897091264 Bad Request: /v1/profiles/guides/certifications/
+INFO 2025-11-29 21:17:34,825 autoreload 25332 139761305063168 /home/malek/projects/TourGuideDZ/server/profiles/views.py changed, reloading.
+INFO 2025-11-29 21:17:35,426 autoreload 25964 139655604113152 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:19:44,175 exceptions 25964 139655198537408 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:19:44,176 log 25964 139655198537408 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:20:27,159 log 25964 139655198537408 Internal Server Error: /v1/profiles/guides/8/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 100, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-29 21:20:33,604 log 25964 139655188047552 Internal Server Error: /v1/profiles/guides/8/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 100, in get_object
+    return GuideProfile.objects.get(id=guide_id, verification_status='verified')
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+INFO 2025-11-29 21:20:56,799 autoreload 25964 139655604113152 /home/malek/projects/TourGuideDZ/server/profiles/views.py changed, reloading.
+INFO 2025-11-29 21:20:57,296 autoreload 26334 139952608259840 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:21:20,705 exceptions 26334 139952203495104 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:21:20,706 log 26334 139952203495104 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:21:25,817 exceptions 26334 139952203495104 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:21:25,818 log 26334 139952203495104 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:21:30,956 exceptions 26334 139952203495104 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:21:30,956 log 26334 139952203495104 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:21:40,772 exceptions 26334 139952203495104 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:21:40,772 log 26334 139952203495104 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:21:46,624 exceptions 26334 139952194053824 API Error: 401 - {'detail': ErrorDetail(string='Given token not valid for any token type', code='token_not_valid'), 'code': ErrorDetail(string='token_not_valid', code='token_not_valid'), 'messages': [{'token_class': ErrorDetail(string='AccessToken', code='token_not_valid'), 'token_type': ErrorDetail(string='access', code='token_not_valid'), 'message': ErrorDetail(string='Token is invalid', code='token_not_valid')}]}
+WARNING 2025-11-29 21:21:46,628 log 26334 139952194053824 Unauthorized: /v1/profiles/guides/8/pricing/
+WARNING 2025-11-29 21:21:57,120 log 26334 139952194053824 Not Found: /v1/accounts/login/
+ERROR 2025-11-29 21:22:06,628 exceptions 26334 139952194053824 API Error: 400 - {'username': [ErrorDetail(string='This field is required.', code='required')]}
+WARNING 2025-11-29 21:22:06,629 log 26334 139952194053824 Bad Request: /v1/auth/login/
+ERROR 2025-11-29 21:24:35,421 exceptions 26334 139952113317568 API Error: 401 - {'detail': ErrorDetail(string='No active account found with the given credentials', code='no_active_account')}
+WARNING 2025-11-29 21:24:35,421 log 26334 139952113317568 Unauthorized: /v1/auth/login/
+ERROR 2025-11-29 21:25:59,322 exceptions 26334 139952113317568 API Error: 401 - {'detail': ErrorDetail(string='No active account found with the given credentials', code='no_active_account')}
+WARNING 2025-11-29 21:25:59,323 log 26334 139952113317568 Unauthorized: /v1/auth/login/
+INFO 2025-11-29 21:28:03,791 autoreload 26334 139952608259840 /home/malek/projects/TourGuideDZ/server/profiles/views.py changed, reloading.
+INFO 2025-11-29 21:28:04,300 autoreload 27315 140712233000704 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:28:36,629 exceptions 27315 140711826552512 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:28:36,629 log 27315 140711826552512 Bad Request: /v1/profiles/guides/certifications/
+INFO 2025-11-29 21:29:16,166 autoreload 27315 140712233000704 /home/malek/projects/TourGuideDZ/server/profiles/models.py changed, reloading.
+INFO 2025-11-29 21:29:16,799 autoreload 27447 139929131327232 Watching for file changes with StatReloader
+INFO 2025-11-29 21:29:24,314 autoreload 27447 139929131327232 /home/malek/projects/TourGuideDZ/server/profiles/serializers.py changed, reloading.
+INFO 2025-11-29 21:29:24,783 autoreload 27489 140426683961088 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:29:55,667 exceptions 27489 140426277287616 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:29:55,667 log 27489 140426277287616 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:30:07,928 exceptions 27489 140426277287616 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:30:07,928 log 27489 140426277287616 Bad Request: /v1/profiles/guides/certifications/
+INFO 2025-11-29 21:30:14,960 autoreload 27663 140492803329792 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:30:19,897 exceptions 27663 140492398393024 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:30:19,897 log 27663 140492398393024 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:30:48,301 exceptions 27663 140492398393024 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:30:48,301 log 27663 140492398393024 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:30:52,227 exceptions 27663 140492398393024 API Error: 400 - {'document': [ErrorDetail(string='The submitted data was not a file. Check the encoding type on the form.', code='invalid')]}
+WARNING 2025-11-29 21:30:52,228 log 27663 140492398393024 Bad Request: /v1/profiles/guides/certifications/
+INFO 2025-11-29 21:31:04,226 autoreload 27663 140492803329792 /home/malek/projects/TourGuideDZ/server/profiles/serializers.py changed, reloading.
+INFO 2025-11-29 21:31:04,846 autoreload 27866 140546635366144 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:32:04,338 exceptions 27866 140546228090560 API Error: 400 - {'title': [ErrorDetail(string='This field is required.', code='required')]}
+WARNING 2025-11-29 21:32:04,339 log 27866 140546228090560 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:32:06,487 exceptions 27866 140546228090560 API Error: 400 - {'title': [ErrorDetail(string='This field is required.', code='required')]}
+WARNING 2025-11-29 21:32:06,488 log 27866 140546228090560 Bad Request: /v1/profiles/guides/certifications/
+ERROR 2025-11-29 21:32:52,678 exceptions 27866 140546228090560 API Error: 404 - {'detail': ErrorDetail(string='No GuideCertification matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:32:52,679 log 27866 140546228090560 Not Found: /v1/profiles/guides/certifications/1/
+ERROR 2025-11-29 21:35:46,144 log 27866 140546219697856 Internal Server Error: /v1/tours/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 97, in create
+    return super().create(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 85, in save
+    if self.guide and self.duration_hours:
+       ^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 246, in __get__
+    raise self.RelatedObjectDoesNotExist(
+        "%s has no %s." % (self.field.model.__name__, self.field.name)
+    )
+tours.models.Tour.guide.RelatedObjectDoesNotExist: Tour has no guide.
+ERROR 2025-11-29 21:37:04,410 log 27866 140546211305152 Internal Server Error: /v1/tours/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 97, in create
+    return super().create(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 85, in save
+    if self.guide and self.duration_hours:
+       ^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 246, in __get__
+    raise self.RelatedObjectDoesNotExist(
+        "%s has no %s." % (self.field.model.__name__, self.field.name)
+    )
+tours.models.Tour.guide.RelatedObjectDoesNotExist: Tour has no guide.
+ERROR 2025-11-29 21:37:07,541 log 27866 140546211305152 Internal Server Error: /v1/tours/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 97, in create
+    return super().create(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 85, in save
+    if self.guide and self.duration_hours:
+       ^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 246, in __get__
+    raise self.RelatedObjectDoesNotExist(
+        "%s has no %s." % (self.field.model.__name__, self.field.name)
+    )
+tours.models.Tour.guide.RelatedObjectDoesNotExist: Tour has no guide.
+INFO 2025-11-29 21:38:43,308 autoreload 27866 140546635366144 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 21:38:43,810 autoreload 28426 140086528401152 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:39:09,686 log 28426 140086124476096 Internal Server Error: /v1/tours/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 97, in create
+    return super().create(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 108, in perform_create
+    serializer.save(guide=guide, price=price)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 94, in save
+    self.clean()
+    ~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 79, in clean
+    raise ValidationError({
+        'wilaya': 'Tour location must be within your coverage areas.'
+    })
+django.core.exceptions.ValidationError: {'wilaya': ['Tour location must be within your coverage areas.']}
+INFO 2025-11-29 21:41:23,235 autoreload 28426 140086528401152 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 21:41:23,970 autoreload 28671 139941743120128 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:41:25,839 log 28671 139941337102016 Internal Server Error: /v1/tours/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 97, in create
+    return super().create(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 85, in save
+    if self.guide and self.duration_hours:
+       ^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 246, in __get__
+    raise self.RelatedObjectDoesNotExist(
+        "%s has no %s." % (self.field.model.__name__, self.field.name)
+    )
+tours.models.Tour.guide.RelatedObjectDoesNotExist: Tour has no guide.
+ERROR 2025-11-29 21:41:57,817 log 28671 139941337102016 Internal Server Error: /v1/tours/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 97, in create
+    return super().create(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 85, in save
+    if self.guide and self.duration_hours:
+       ^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 246, in __get__
+    raise self.RelatedObjectDoesNotExist(
+        "%s has no %s." % (self.field.model.__name__, self.field.name)
+    )
+tours.models.Tour.guide.RelatedObjectDoesNotExist: Tour has no guide.
+ERROR 2025-11-29 21:42:01,737 log 28671 139941337102016 Internal Server Error: /v1/tours/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 97, in create
+    return super().create(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 85, in save
+    if self.guide and self.duration_hours:
+       ^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/fields/related_descriptors.py", line 246, in __get__
+    raise self.RelatedObjectDoesNotExist(
+        "%s has no %s." % (self.field.model.__name__, self.field.name)
+    )
+tours.models.Tour.guide.RelatedObjectDoesNotExist: Tour has no guide.
+INFO 2025-11-29 21:42:15,332 autoreload 28671 139941743120128 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 21:42:15,736 autoreload 28831 140564857548544 Watching for file changes with StatReloader
+INFO 2025-11-29 21:42:17,065 autoreload 28831 140564857548544 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 21:42:17,462 autoreload 28843 140126257282816 Watching for file changes with StatReloader
+INFO 2025-11-29 21:42:21,818 autoreload 28843 140126257282816 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 21:42:22,203 autoreload 28868 140368182292224 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:42:45,638 log 28868 140367777232576 Internal Server Error: /v1/tours/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 97, in create
+    return super().create(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 108, in perform_create
+    serializer.save(guide=guide, price=price)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 94, in save
+    self.clean()
+    ~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/models.py", line 79, in clean
+    raise ValidationError({
+        'wilaya': 'Tour location must be within your coverage areas.'
+    })
+django.core.exceptions.ValidationError: {'wilaya': ['Tour location must be within your coverage areas.']}
+WARNING 2025-11-29 21:45:48,594 log 28868 140367758350016 Not Found: /v1/tours//
+ERROR 2025-11-29 21:45:58,482 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:45:58,482 log 28868 140367758350016 Not Found: /v1/tours/6/
+ERROR 2025-11-29 21:46:23,171 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:46:23,172 log 28868 140367758350016 Not Found: /v1/tours/1/
+ERROR 2025-11-29 21:46:27,427 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:46:27,428 log 28868 140367758350016 Not Found: /v1/tours/1/
+ERROR 2025-11-29 21:46:33,173 log 28868 140367758350016 Internal Server Error: /v1/tours/3/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 286, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 100, in get_object
+    obj = get_object_or_404(queryset, **filter_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 19, in get_object_or_404
+    return _get_object_or_404(queryset, *filter_args, **filter_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 635, in get
+    num = len(clone)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 1888, in _fetch_all
+    self._prefetch_related_objects()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 1275, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 2301, in prefetch_related_objects
+    raise AttributeError(
+    ...<7 lines>...
+    )
+AttributeError: Cannot find 'images' on Tour object, 'images' is an invalid parameter to prefetch_related()
+ERROR 2025-11-29 21:46:37,631 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:46:37,632 log 28868 140367758350016 Not Found: /v1/tours/4/
+ERROR 2025-11-29 21:46:44,958 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:46:44,959 log 28868 140367758350016 Not Found: /v1/tours/5/
+ERROR 2025-11-29 21:46:52,187 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:46:52,187 log 28868 140367758350016 Not Found: /v1/tours/6/
+ERROR 2025-11-29 21:46:58,899 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:46:58,899 log 28868 140367758350016 Not Found: /v1/tours/7/
+ERROR 2025-11-29 21:47:04,072 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:47:04,072 log 28868 140367758350016 Not Found: /v1/tours/8/
+ERROR 2025-11-29 21:47:08,674 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:47:08,675 log 28868 140367758350016 Not Found: /v1/tours/9/
+ERROR 2025-11-29 21:47:14,528 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:47:14,528 log 28868 140367758350016 Not Found: /v1/tours/10/
+ERROR 2025-11-29 21:47:19,876 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:47:19,876 log 28868 140367758350016 Not Found: /v1/tours/11/
+ERROR 2025-11-29 21:47:26,953 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:47:26,953 log 28868 140367758350016 Not Found: /v1/tours/114/
+ERROR 2025-11-29 21:47:33,697 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:47:33,697 log 28868 140367758350016 Not Found: /v1/tours/4/
+ERROR 2025-11-29 21:47:43,722 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:47:43,723 log 28868 140367758350016 Not Found: /v1/tours/5/
+ERROR 2025-11-29 21:47:50,650 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:47:50,651 log 28868 140367758350016 Not Found: /v1/tours/6/
+ERROR 2025-11-29 21:48:32,325 exceptions 28868 140367758350016 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:48:32,325 log 28868 140367758350016 Not Found: /v1/tours/6/
+ERROR 2025-11-29 21:49:58,228 log 28868 140367748908736 Internal Server Error: /v1/tours/3/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 286, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 100, in get_object
+    obj = get_object_or_404(queryset, **filter_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 19, in get_object_or_404
+    return _get_object_or_404(queryset, *filter_args, **filter_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 635, in get
+    num = len(clone)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 1888, in _fetch_all
+    self._prefetch_related_objects()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 1275, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 2301, in prefetch_related_objects
+    raise AttributeError(
+    ...<7 lines>...
+    )
+AttributeError: Cannot find 'images' on Tour object, 'images' is an invalid parameter to prefetch_related()
+INFO 2025-11-29 21:54:36,837 autoreload 28868 140368182292224 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 21:54:37,485 autoreload 29872 139999676923648 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:54:48,069 log 29872 139999271974592 Internal Server Error: /v1/tours/3/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 286, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 100, in get_object
+    obj = get_object_or_404(queryset, **filter_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 19, in get_object_or_404
+    return _get_object_or_404(queryset, *filter_args, **filter_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 635, in get
+    num = len(clone)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 1888, in _fetch_all
+    self._prefetch_related_objects()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 1275, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 2301, in prefetch_related_objects
+    raise AttributeError(
+    ...<7 lines>...
+    )
+AttributeError: Cannot find 'images' on Tour object, 'images' is an invalid parameter to prefetch_related()
+ERROR 2025-11-29 21:56:49,743 log 29872 139999261484736 Internal Server Error: /v1/tours/3/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 286, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 100, in get_object
+    obj = get_object_or_404(queryset, **filter_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 19, in get_object_or_404
+    return _get_object_or_404(queryset, *filter_args, **filter_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/shortcuts.py", line 85, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 635, in get
+    num = len(clone)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 1888, in _fetch_all
+    self._prefetch_related_objects()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 1275, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 2301, in prefetch_related_objects
+    raise AttributeError(
+    ...<7 lines>...
+    )
+AttributeError: Cannot find 'images' on Tour object, 'images' is an invalid parameter to prefetch_related()
+INFO 2025-11-29 21:57:18,897 autoreload 29872 139999676923648 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 21:57:19,527 autoreload 30135 139782009839360 Watching for file changes with StatReloader
+ERROR 2025-11-29 21:59:52,815 exceptions 30135 139781672531648 API Error: 404 - {'detail': ErrorDetail(string='No Tour matches the given query.', code='not_found')}
+WARNING 2025-11-29 21:59:52,817 log 30135 139781672531648 Not Found: /v1/tours/1/
+ERROR 2025-11-29 22:03:34,771 exceptions 30135 139781581301440 API Error: 401 - {'detail': ErrorDetail(string='Authentication credentials were not provided.', code='not_authenticated')}
+WARNING 2025-11-29 22:03:34,772 log 30135 139781581301440 Unauthorized: /v1/tours/3/
+ERROR 2025-11-29 22:03:58,694 exceptions 30135 139781581301440 API Error: 400 - {'detail': ErrorDetail(string='JSON parse error - Illegal trailing comma before end of object: line 2 column 253 (char 254)', code='parse_error')}
+WARNING 2025-11-29 22:03:58,695 log 30135 139781581301440 Bad Request: /v1/tours/3/
+ERROR 2025-11-29 22:04:15,970 exceptions 30135 139781581301440 API Error: 400 - {'detail': ErrorDetail(string='JSON parse error - Illegal trailing comma before end of object: line 2 column 253 (char 254)', code='parse_error')}
+WARNING 2025-11-29 22:04:15,970 log 30135 139781581301440 Bad Request: /v1/tours/3/
+ERROR 2025-11-29 22:04:31,342 exceptions 30135 139781581301440 API Error: 400 - {'non_field_errors': [ErrorDetail(string='GPS coordinates (latitude and longitude) are required for weather integration.', code='invalid')]}
+WARNING 2025-11-29 22:04:31,343 log 30135 139781581301440 Bad Request: /v1/tours/3/
+INFO 2025-11-29 22:05:51,507 autoreload 30135 139782009839360 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 22:05:52,140 autoreload 30742 139899818536704 Watching for file changes with StatReloader
+ERROR 2025-11-29 22:06:39,834 exceptions 30742 139899413984960 API Error: 400 - {'non_field_errors': [ErrorDetail(string='GPS coordinates (latitude and longitude) are required for weather integration.', code='invalid')]}
+WARNING 2025-11-29 22:06:39,835 log 30742 139899413984960 Bad Request: /v1/tours/3/
+INFO 2025-11-29 22:07:58,500 autoreload 30742 139899818536704 /home/malek/projects/TourGuideDZ/server/tours/serializers.py changed, reloading.
+INFO 2025-11-29 22:07:58,908 autoreload 30912 140213030641408 Watching for file changes with StatReloader
+WARNING 2025-11-29 22:09:35,094 log 30912 140212616292032 Forbidden: /v1/tours/3/
+INFO 2025-11-29 22:15:15,830 autoreload 30912 140213030641408 /home/malek/projects/TourGuideDZ/server/tours/serializers.py changed, reloading.
+INFO 2025-11-29 22:15:16,471 autoreload 31562 139797939822336 Watching for file changes with StatReloader
+ERROR 2025-11-29 22:20:10,773 log 31562 139797524899520 Internal Server Error: /v1/tours/3/calculate-price/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 236, in retrieve
+    if group_size < tour.min_group_size or group_size > tour.max_group_size:
+                    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tour' object has no attribute 'min_group_size'. Did you mean: 'max_group_size'?
+ERROR 2025-11-29 22:20:39,445 log 31562 139797524899520 Internal Server Error: /v1/tours/3/calculate-price/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 236, in retrieve
+    if group_size < tour.min_group_size or group_size > tour.max_group_size:
+                    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Tour' object has no attribute 'min_group_size'. Did you mean: 'max_group_size'?
+INFO 2025-11-29 22:22:29,327 autoreload 31562 139797939822336 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 22:22:29,968 autoreload 32105 140322107428608 Watching for file changes with StatReloader
+INFO 2025-11-29 22:22:57,972 autoreload 32105 140322107428608 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 22:22:58,362 autoreload 32150 140584298372864 Watching for file changes with StatReloader
+INFO 2025-11-29 22:23:52,856 autoreload 32150 140584298372864 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 22:23:53,457 autoreload 32204 140499506110208 Watching for file changes with StatReloader
+ERROR 2025-11-29 22:24:14,547 log 32204 140499099842240 Internal Server Error: /v1/tours/3/calculate-price/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/server/tours/views.py", line 262, in retrieve
+    discount_amount = total_price * discount
+                      ~~~~~~~~~~~~^~~~~~~~~~
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+INFO 2025-11-29 22:25:40,403 autoreload 32204 140499506110208 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 22:25:40,853 autoreload 32372 140333871079168 Watching for file changes with StatReloader
+INFO 2025-11-29 22:25:59,594 autoreload 32372 140333871079168 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 22:26:00,241 autoreload 32416 140117402533632 Watching for file changes with StatReloader
+WARNING 2025-11-29 22:28:25,027 log 32416 140116989306560 Bad Request: /v1/tours/3/calculate-price/
+INFO 2025-11-29 22:30:04,986 autoreload 32416 140117402533632 /home/malek/projects/TourGuideDZ/server/tours/views.py changed, reloading.
+INFO 2025-11-29 22:30:05,589 autoreload 32699 140669725941504 Watching for file changes with StatReloader
+ERROR 2025-11-29 22:32:10,273 exceptions 32699 140669388584640 API Error: 400 - {'booking_date': [ErrorDetail(string='Booking date must be in the future.', code='invalid')]}
+WARNING 2025-11-29 22:32:10,274 log 32699 140669388584640 Bad Request: /v1/bookings/
+WARNING 2025-11-29 22:38:21,866 log 32699 140669297354432 Bad Request: /v1/bookings/1/status/
+WARNING 2025-11-29 22:38:32,122 log 32699 140669297354432 Bad Request: /v1/bookings/1/status/
+WARNING 2025-11-29 22:38:35,357 log 32699 140669297354432 Bad Request: /v1/bookings/1/status/
+WARNING 2025-11-29 22:39:30,430 log 32699 140669297354432 Bad Request: /v1/bookings/1/status/
+ERROR 2025-11-29 22:43:24,577 exceptions 32699 140669288961728 API Error: 401 - {'detail': ErrorDetail(string='Given token not valid for any token type', code='token_not_valid'), 'code': ErrorDetail(string='token_not_valid', code='token_not_valid'), 'messages': [{'token_class': ErrorDetail(string='AccessToken', code='token_not_valid'), 'token_type': ErrorDetail(string='access', code='token_not_valid'), 'message': ErrorDetail(string='Token is invalid', code='token_not_valid')}]}
+WARNING 2025-11-29 22:43:24,577 log 32699 140669288961728 Unauthorized: /v1/bookings/1/status/
+WARNING 2025-11-29 22:43:35,070 log 32699 140669280569024 Bad Request: /v1/bookings/1/status/
+WARNING 2025-11-29 22:43:40,830 log 32699 140669280569024 Bad Request: /v1/bookings/1/status/
+INFO 2025-11-29 22:49:23,457 autoreload 32699 140669725941504 /home/malek/projects/TourGuideDZ/server/bookings/serializers.py changed, reloading.
+INFO 2025-11-29 22:49:23,885 autoreload 33752 139698311810816 Watching for file changes with StatReloader
+INFO 2025-11-29 22:49:43,764 autoreload 33752 139698311810816 /home/malek/projects/TourGuideDZ/server/bookings/serializers.py changed, reloading.
+INFO 2025-11-29 22:49:44,174 autoreload 33794 140343710347008 Watching for file changes with StatReloader
+WARNING 2025-11-29 22:50:16,841 log 33794 140343373723328 Bad Request: /v1/bookings/1/cancel/
+WARNING 2025-11-29 22:50:48,243 log 33794 140343373723328 Bad Request: /v1/bookings/1/cancel/
+WARNING 2025-11-29 22:51:12,582 log 33794 140343373723328 Bad Request: /v1/bookings/1/cancel/
+ERROR 2025-11-29 22:52:24,029 exceptions 33794 140343290885824 API Error: 401 - {'detail': ErrorDetail(string='Authentication credentials were not provided.', code='not_authenticated')}
+WARNING 2025-11-29 22:52:24,029 log 33794 140343290885824 Unauthorized: /v1/bookings/2/
+WARNING 2025-11-29 22:54:05,814 log 33794 140343290885824 Forbidden: /v1/bookings/calendar/available/
+INFO 2025-11-29 23:02:44,763 autoreload 33794 140343710347008 /home/malek/projects/TourGuideDZ/server/bookings/serializers.py changed, reloading.
+INFO 2025-11-29 23:02:45,287 autoreload 34892 139761465642752 Watching for file changes with StatReloader
+WARNING 2025-11-29 23:06:06,213 log 34892 139761045989056 Not Found: /api/bookings/calendar/available/
+WARNING 2025-11-29 23:06:19,500 log 34892 139761045989056 Not Found: /api/bookings/calendar/available/
+ERROR 2025-11-29 23:06:36,958 exceptions 34892 139761045989056 API Error: 401 - {'detail': ErrorDetail(string='Given token not valid for any token type', code='token_not_valid'), 'code': ErrorDetail(string='token_not_valid', code='token_not_valid'), 'messages': [{'token_class': ErrorDetail(string='AccessToken', code='token_not_valid'), 'token_type': ErrorDetail(string='access', code='token_not_valid'), 'message': ErrorDetail(string='Token is invalid', code='token_not_valid')}]}
+WARNING 2025-11-29 23:06:36,959 log 34892 139761045989056 Unauthorized: /v1/bookings/calendar/available/
+INFO 2025-11-29 23:10:05,765 autoreload 34892 139761465642752 /home/malek/projects/TourGuideDZ/server/profiles/serializers.py changed, reloading.
+INFO 2025-11-29 23:10:06,242 autoreload 35424 139635256545024 Watching for file changes with StatReloader
+INFO 2025-11-29 23:11:08,831 autoreload 35424 139635256545024 /home/malek/projects/TourGuideDZ/server/profiles/views.py changed, reloading.
+INFO 2025-11-29 23:11:09,273 autoreload 35482 140167771819776 Watching for file changes with StatReloader
+INFO 2025-11-29 23:11:50,390 autoreload 35482 140167771819776 /home/malek/projects/TourGuideDZ/server/profiles/urls.py changed, reloading.
+INFO 2025-11-29 23:11:51,016 autoreload 35531 140480914853632 Watching for file changes with StatReloader
+WARNING 2025-11-29 23:15:48,213 log 35531 140480509638336 Forbidden: /v1/reviews/bookings/2/review/
+WARNING 2025-11-29 23:16:08,763 log 35531 140480509638336 Bad Request: /v1/reviews/bookings/2/review/
+WARNING 2025-11-29 23:16:56,509 log 35531 140480509638336 Bad Request: /v1/reviews/bookings/2/review/
+WARNING 2025-11-29 23:17:04,889 log 35531 140480509638336 Bad Request: /v1/reviews/bookings/3/review/
+WARNING 2025-11-29 23:17:10,327 log 35531 140480509638336 Bad Request: /v1/reviews/bookings/4/review/
+ERROR 2025-11-29 23:17:22,969 exceptions 35531 140480509638336 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-29 23:17:22,969 log 35531 140480509638336 Not Found: /v1/reviews/bookings/6/review/
+ERROR 2025-11-29 23:17:33,462 exceptions 35531 140480509638336 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-29 23:17:33,463 log 35531 140480509638336 Not Found: /v1/reviews/bookings/5/review/
+WARNING 2025-11-29 23:17:41,686 log 35531 140480509638336 Bad Request: /v1/reviews/bookings/4/review/
+INFO 2025-11-29 23:18:07,178 autoreload 35531 140480914853632 /home/malek/projects/TourGuideDZ/server/profiles/serializers.py changed, reloading.
+INFO 2025-11-29 23:18:07,842 autoreload 36001 140189823745792 Watching for file changes with StatReloader
+ERROR 2025-11-29 23:22:25,670 exceptions 36001 140189486806720 API Error: 401 - {'detail': ErrorDetail(string='No active account found with the given credentials', code='no_active_account')}
+WARNING 2025-11-29 23:22:25,672 log 36001 140189486806720 Unauthorized: /v1/auth/login/
+ERROR 2025-11-29 23:22:45,592 exceptions 36001 140189486806720 API Error: 401 - {'detail': ErrorDetail(string='No active account found with the given credentials', code='no_active_account')}
+WARNING 2025-11-29 23:22:45,593 log 36001 140189486806720 Unauthorized: /v1/auth/login/
+WARNING 2025-11-29 23:24:10,690 log 36001 140189486806720 Bad Request: /v1/reviews/bookings/4/review/
+ERROR 2025-11-29 23:24:28,576 exceptions 36001 140189384033984 API Error: 401 - {'detail': ErrorDetail(string='No active account found with the given credentials', code='no_active_account')}
+WARNING 2025-11-29 23:24:28,577 log 36001 140189384033984 Unauthorized: /v1/auth/login/
+INFO 2025-11-29 23:26:00,201 autoreload 36001 140189823745792 /home/malek/projects/TourGuideDZ/server/reviews/serializers.py changed, reloading.
+INFO 2025-11-29 23:26:00,756 autoreload 36841 140522052644608 Watching for file changes with StatReloader
+INFO 2025-11-29 23:27:54,551 autoreload 36841 140522052644608 /home/malek/projects/TourGuideDZ/server/reviews/serializers.py changed, reloading.
+INFO 2025-11-29 23:27:55,129 autoreload 36998 140074844749568 Watching for file changes with StatReloader
+WARNING 2025-11-29 23:32:27,603 log 36998 140074440193728 Forbidden: /v1/reviews/bookings/4/review/
+WARNING 2025-11-29 23:32:56,663 log 36998 140074440193728 Bad Request: /v1/reviews/bookings/4/review/
+ERROR 2025-11-29 23:33:23,237 exceptions 36998 140074440193728 API Error: 405 - {'detail': ErrorDetail(string='Method "PATCH" not allowed.', code='method_not_allowed')}
+WARNING 2025-11-29 23:33:23,238 log 36998 140074440193728 Method Not Allowed: /v1/reviews/bookings/4/review/
+ERROR 2025-11-29 23:33:52,066 exceptions 36998 140074440193728 API Error: 404 - {'detail': ErrorDetail(string='No Review matches the given query.', code='not_found')}
+WARNING 2025-11-29 23:33:52,066 log 36998 140074440193728 Not Found: /v1/reviews/4/
+ERROR 2025-11-29 23:36:46,645 exceptions 36998 140074430752448 API Error: 404 - {'detail': ErrorDetail(string='No GuideProfile matches the given query.', code='not_found')}
+WARNING 2025-11-29 23:36:46,646 log 36998 140074430752448 Not Found: /v1/messaging/conversations/
+ERROR 2025-11-29 23:37:08,760 exceptions 36998 140074430752448 API Error: 404 - {'detail': ErrorDetail(string='No GuideProfile matches the given query.', code='not_found')}
+WARNING 2025-11-29 23:37:08,760 log 36998 140074430752448 Not Found: /v1/messaging/conversations/
+WARNING 2025-11-29 23:37:20,802 log 36998 140074430752448 Forbidden: /v1/messaging/conversations/

@@ -22,7 +22,7 @@ class TourListCreateView(generics.ListCreateAPIView):
     List tours with search, filter and sorting capabilities
     Create new tours (guides only)
     """
-    queryset = Tour.objects.select_related('guide', 'wilaya').prefetch_related('images')
+    queryset = Tour.objects.select_related('guide', 'wilaya')
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ['wilaya', 'status']
     search_fields = ['title', 'description', 'wilaya__name_en', 'guide__user__first_name', 'guide__user__last_name']
@@ -72,9 +72,12 @@ class TourListCreateView(generics.ListCreateAPIView):
         min_group_size = self.request.query_params.get('min_group_size')
         max_group_size = self.request.query_params.get('max_group_size')
         if min_group_size:
+            # Filter tours that can accommodate at least the minimum requested size
             queryset = queryset.filter(max_group_size__gte=min_group_size)
         if max_group_size:
-            queryset = queryset.filter(min_group_size__lte=max_group_size)
+            # Since there's no min_group_size field, we assume all tours accept 1+ people
+            # So we don't need to filter further for max_group_size requests
+            pass
         
         # Filter by rating
         min_rating = self.request.query_params.get('min_rating')
@@ -95,6 +98,17 @@ class TourListCreateView(generics.ListCreateAPIView):
             )
         
         return super().create(request, *args, **kwargs)
+    
+    def perform_create(self, serializer):
+        # Set the guide to the current user's guide profile
+        guide = self.request.user.guide_profile
+        
+        # Calculate price based on duration and guide's pricing
+        duration = serializer.validated_data['duration_hours']
+        price = guide.calculate_tour_price(float(duration))
+        
+        # Save the tour with guide and calculated price
+        serializer.save(guide=guide, price=price)
 
 class TourSearchView(generics.ListAPIView):
     """
@@ -160,7 +174,7 @@ class TourDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve, update or delete a tour
     """
-    queryset = Tour.objects.select_related('guide', 'wilaya').prefetch_related('images', 'reviews')
+    queryset = Tour.objects.select_related('guide', 'wilaya').prefetch_related('reviews')
     serializer_class = TourDetailSerializer
     
     def get_permissions(self):
@@ -221,12 +235,13 @@ class TourPriceCalculationView(generics.RetrieveAPIView):
         tour = self.get_object()
         group_size = int(request.query_params.get('group_size', 1))
         
-        # Validate group size
-        if group_size < tour.min_group_size or group_size > tour.max_group_size:
+        # Validate group size (minimum is 1, maximum is from tour settings)
+        min_group_size = 1
+        if group_size < min_group_size or group_size > tour.max_group_size:
             return Response(
                 {
-                    'error': f'Group size must be between {tour.min_group_size} and {tour.max_group_size}',
-                    'min_group_size': tour.min_group_size,
+                    'error': f'Group size must be between {min_group_size} and {tour.max_group_size}',
+                    'min_group_size': min_group_size,
                     'max_group_size': tour.max_group_size
                 },
                 status=status.HTTP_400_BAD_REQUEST
@@ -236,13 +251,14 @@ class TourPriceCalculationView(generics.RetrieveAPIView):
         total_price = base_price * group_size
         
         # Apply group discounts (example business logic)
-        discount = 0
+        from decimal import Decimal
+        discount = Decimal('0')
         if group_size >= 10:
-            discount = 0.15  # 15% discount for groups of 10+
+            discount = Decimal('0.15')  # 15% discount for groups of 10+
         elif group_size >= 6:
-            discount = 0.10  # 10% discount for groups of 6+
+            discount = Decimal('0.10')  # 10% discount for groups of 6+
         elif group_size >= 4:
-            discount = 0.05  # 5% discount for groups of 4+
+            discount = Decimal('0.05')  # 5% discount for groups of 4+
         
         discount_amount = total_price * discount
         final_price = total_price - discount_amount
@@ -253,11 +269,11 @@ class TourPriceCalculationView(generics.RetrieveAPIView):
             'group_size': group_size,
             'base_price_per_person': base_price,
             'subtotal': total_price,
-            'discount_percentage': discount * 100,
+            'discount_percentage': float(discount * 100),
             'discount_amount': round(discount_amount, 2),
             'final_price': round(final_price, 2),
             'currency': 'DZD',
-            'min_group_size': tour.min_group_size,
+            'min_group_size': 1,
             'max_group_size': tour.max_group_size
         })
 

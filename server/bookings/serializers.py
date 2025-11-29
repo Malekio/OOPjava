@@ -10,7 +10,6 @@ class BookingSerializer(serializers.ModelSerializer):
     """
     tour = TourListSerializer(read_only=True)
     tourist = TouristProfileSerializer(read_only=True)
-    guide = serializers.SerializerMethodField()
     tour_id = serializers.IntegerField(write_only=True)
     days_until_booking = serializers.SerializerMethodField()
     can_cancel = serializers.SerializerMethodField()
@@ -19,18 +18,12 @@ class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
         fields = [
-            'id', 'tour', 'tourist', 'guide', 'tour_id',
+            'id', 'tour', 'tourist', 'tour_id',
             'booking_date', 'time_slot', 'group_size', 'total_price',
             'status', 'notes', 'days_until_booking', 'can_cancel',
             'can_review', 'created_at', 'updated_at'
         ]
         read_only_fields = ['id', 'total_price', 'created_at', 'updated_at']
-    
-    def get_guide(self, obj):
-        """Get guide info through tour relationship"""
-        if obj.tour and obj.tour.guide:
-            return GuideProfileListSerializer(obj.tour.guide).data
-        return None
     
     def get_days_until_booking(self, obj):
         """Calculate days until booking date"""

@@ -14,4 +14,8 @@ urlpatterns = [
     
     # Tourist profiles
     path('tourists/me/', views.TouristProfileMeView.as_view(), name='tourist-me'),
+    
+    # Guide Availability Management
+    path('guides/availability/', views.GuideAvailabilityManagementView.as_view(), name='guide-availability-management'),
+    path('guides/availability/bulk/', views.GuideAvailabilityBulkView.as_view(), name='guide-availability-bulk'),
 ]

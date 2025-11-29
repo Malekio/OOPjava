@@ -52,8 +52,17 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             TouristProfile.objects.create(user=user)
         elif user.user_type == 'guide':
             from profiles.models import GuideProfile
-            # Guide profiles need additional required fields, will be created via separate endpoint
-            pass
+            # Create guide profile with default values - can be updated later
+            GuideProfile.objects.create(
+                user=user,
+                bio="",  # Will be updated by guide later
+                years_of_experience=0,
+                languages=[],
+                half_day_price="50.00",  # Default price
+                full_day_price="100.00",  # Default price
+                extra_hour_price="15.00",  # Default price
+                verification_status='pending'
+            )
         
         return user
 
