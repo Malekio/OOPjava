@@ -561,3 +561,4 @@ INFO 2025-11-29 18:32:16,577 autoreload 14242 140569284058880 Watching for file 
 INFO 2025-11-29 18:39:38,615 autoreload 14242 140569284058880 /home/malek/projects/TourGuideDZ/server/accounts/admin.py changed, reloading.
 INFO 2025-11-29 18:39:39,120 autoreload 14834 140151852592896 Watching for file changes with StatReloader
 WARNING 2025-11-29 18:40:46,316 log 14834 140151438173888 Not Found: /favicon.ico
+INFO 2025-11-29 19:09:04,870 autoreload 16364 139687277178624 Watching for file changes with StatReloader
