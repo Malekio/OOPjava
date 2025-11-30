@@ -54,11 +54,13 @@
 
 ### **3. 👤 PROFILES APP**
 
+**Note**: Both TouristProfile and GuideProfile use the `user` field as their primary key (`[PK]`), ensuring that Profile ID = User ID for simplified system architecture.
+
 ```
 ┌─────────────────────────────────────┐
 │          TouristProfile             │
 ├─────────────────────────────────────┤
-│ + user: OneToOneField(User)         │
+│ + user: OneToOneField(User) [PK]    │
 │ + bio: TextField                    │
 │ + date_of_birth: DateField          │
 │ + nationality: CharField            │
@@ -73,7 +75,7 @@
 ┌─────────────────────────────────────┐
 │          GuideProfile               │
 ├─────────────────────────────────────┤
-│ + user: OneToOneField(User)         │
+│ + user: OneToOneField(User) [PK]    │
 │ + bio: TextField                    │
 │ + profile_picture: ImageField       │
 │ + years_of_experience: PositiveInt  │
@@ -311,12 +313,14 @@ class User {
 }
 
 class TouristProfile {
+  +user: User [PK]
   +bio: String
   +nationality: String
   +preferred_language: String
 }
 
 class GuideProfile {
+  +user: User [PK]
   +bio: String
   +years_of_experience: Integer
   +languages: JSON
@@ -408,6 +412,7 @@ classDiagram
     }
     
     class GuideProfile {
+        +User user [PK]
         +String bio
         +Integer years_of_experience
         +Decimal half_day_price
