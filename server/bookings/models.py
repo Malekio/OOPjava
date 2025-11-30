@@ -73,7 +73,23 @@ class Booking(models.Model):
         return self.tour.guide
     
     def save(self, *args, **kwargs):
-        # Auto-calculate total price
+        # Auto-calculate total price with group discounts
         if not self.total_price:
-            self.total_price = self.tour.price * self.group_size
+            from decimal import Decimal
+            
+            base_price = self.tour.price
+            subtotal = base_price * self.group_size
+            
+            # Apply group discounts (same logic as price calculation endpoint)
+            discount = Decimal('0')
+            if self.group_size >= 10:
+                discount = Decimal('0.15')  # 15% discount for groups of 10+
+            elif self.group_size >= 6:
+                discount = Decimal('0.10')  # 10% discount for groups of 6+
+            elif self.group_size >= 4:
+                discount = Decimal('0.05')  # 5% discount for groups of 4+
+            
+            discount_amount = subtotal * discount
+            self.total_price = subtotal - discount_amount
+            
         super().save(*args, **kwargs)

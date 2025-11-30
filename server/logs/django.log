@@ -2666,3 +2666,8 @@ WARNING 2025-11-29 23:36:46,646 log 36998 140074430752448 Not Found: /v1/messagi
 ERROR 2025-11-29 23:37:08,760 exceptions 36998 140074430752448 API Error: 404 - {'detail': ErrorDetail(string='No GuideProfile matches the given query.', code='not_found')}
 WARNING 2025-11-29 23:37:08,760 log 36998 140074430752448 Not Found: /v1/messaging/conversations/
 WARNING 2025-11-29 23:37:20,802 log 36998 140074430752448 Forbidden: /v1/messaging/conversations/
+INFO 2025-11-30 02:00:37,192 autoreload 40777 140654672432896 Watching for file changes with StatReloader
+INFO 2025-11-30 02:01:30,702 autoreload 40777 140654672432896 /home/malek/projects/TourGuideDZ/server/bookings/models.py changed, reloading.
+INFO 2025-11-30 02:01:31,360 autoreload 40873 139816719728384 Watching for file changes with StatReloader
+INFO 2025-11-30 02:01:43,098 autoreload 40873 139816719728384 /home/malek/projects/TourGuideDZ/server/bookings/models.py changed, reloading.
+INFO 2025-11-30 02:01:43,603 autoreload 40909 140187710148352 Watching for file changes with StatReloader
