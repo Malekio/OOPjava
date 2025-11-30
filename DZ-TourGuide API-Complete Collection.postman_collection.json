@@ -631,7 +631,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							},
 							{
 								"key": "Content-Type",
@@ -978,7 +978,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{guide_access_token}}"
 							}
 						],
 						"url": {
@@ -1024,7 +1024,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{guide_access_token}}"
 							},
 							{
 								"key": "Content-Type",
@@ -1072,7 +1072,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{guide_access_token}}"
 							}
 						],
 						"url": {
@@ -1643,7 +1643,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							}
 						],
 						"url": {
@@ -1686,7 +1686,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							}
 						],
 						"url": {
@@ -1730,7 +1730,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{guide_access_token}}"
 							}
 						],
 						"url": {
@@ -1871,7 +1871,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							},
 							{
 								"key": "Content-Type",
@@ -2266,7 +2266,8 @@
 									"    pm.expect(response).to.have.property('results');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2275,7 +2276,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							}
 						],
 						"url": {
@@ -2309,7 +2310,8 @@
 									"    pm.expect(response).to.be.an('array');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2318,7 +2320,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							}
 						],
 						"url": {
@@ -2463,7 +2465,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{guide_access_token}}"
 							}
 						],
 						"url": {
