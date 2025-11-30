@@ -39,7 +39,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_403_FORBIDDEN,
             )
 
-        guide = get_object_or_404(GuideProfile, id=guide_id)
+        guide = get_object_or_404(GuideProfile, pk=guide_id)
         conversation, created = Conversation.objects.get_or_create(
             tourist=request.user.tourist_profile, guide=guide
         )

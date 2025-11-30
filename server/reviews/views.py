@@ -225,7 +225,7 @@ def review_statistics(request, guide_id):
     """
     Get review statistics for a guide
     """
-    guide = get_object_or_404(GuideProfile, id=guide_id)
+    guide = get_object_or_404(GuideProfile, pk=guide_id)
 
     reviews = Review.objects.filter(guide=guide, is_approved=True)
 

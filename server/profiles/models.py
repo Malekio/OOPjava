@@ -13,6 +13,7 @@ class TouristProfile(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name="tourist_profile",
+        primary_key=True,
     )
     bio = models.TextField(max_length=500, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
@@ -41,7 +42,10 @@ class GuideProfile(models.Model):
     ]
 
     user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="guide_profile"
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE, 
+        related_name="guide_profile",
+        primary_key=True,
     )
     bio = models.TextField(max_length=1000)
     profile_picture = models.ImageField(upload_to="guides/profiles/")
