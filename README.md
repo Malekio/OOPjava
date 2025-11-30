@@ -6,31 +6,6 @@ A comprehensive Django REST Framework backend for DZ-TourGuide - a local tour gu
 
 DZ-TourGuide connects tourists with certified local guides for personalized tours across Algeria. The platform features dual user profiles (Tourists & Guides), tour management, booking system with approval workflow, and comprehensive review system.
 
-### 🏗️ Core Features
-
-- **Dual User Profiles**: Separate registration/login for Tourists and Guides
-- **Guide Profiles**: Public profiles with photos, bio, languages, coverage areas, certifications
-- **Tour Management**: Guides create predefined tours with GPS coordinates for weather integration
-- **Tour Directory**: Tourists browse and search tours by city/wilaya
-- **🌤️ Weather Integration**: Real-time weather forecasts for tour locations (5-day window)
-- **📅 Advanced Calendar**: Time slot management (morning/afternoon/evening/full-day)
-- **💬 Messaging System**: Tourist-Guide communication & custom tour requests
-- **Booking System**: Request-based booking with guide approval and time slot validation
-- **Flexible Pricing**: Half-day, full-day, and extra-hour pricing structure
-- **Coverage Zones**: Guides specify covered wilayas with validation
-- **⭐ Simplified Review System**: Streamlined 1-5 star rating system
-- **Admin Panel**: Guide verification and platform management
-
-## 🛠️ Technical Stack
-
-- **Backend**: Django 4.2 + Django REST Framework
-- **Authentication**: JWT (djangorestframework-simplejwt)
-- **Database**: SQLite (dev) / PostgreSQL (production)
-- **Weather API**: OpenWeatherMap integration
-- **File Storage**: Local (dev) / AWS S3 (production)
-- **Caching**: Redis (includes weather data caching)
-- **Task Queue**: Celery
-- **API Documentation**: Auto-generated with DRF
 
 ## 📦 Installation & Setup
 

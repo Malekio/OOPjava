@@ -2671,3 +2671,5 @@ INFO 2025-11-30 02:01:30,702 autoreload 40777 140654672432896 /home/malek/projec
 INFO 2025-11-30 02:01:31,360 autoreload 40873 139816719728384 Watching for file changes with StatReloader
 INFO 2025-11-30 02:01:43,098 autoreload 40873 139816719728384 /home/malek/projects/TourGuideDZ/server/bookings/models.py changed, reloading.
 INFO 2025-11-30 02:01:43,603 autoreload 40909 140187710148352 Watching for file changes with StatReloader
+INFO 2025-11-30 02:27:35,764 autoreload 40909 140187710148352 /home/malek/projects/TourGuideDZ/server/server/settings.py changed, reloading.
+INFO 2025-11-30 02:27:36,427 autoreload 42755 140507820928768 Watching for file changes with StatReloader
