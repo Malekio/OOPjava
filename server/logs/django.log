@@ -2673,3 +2673,286 @@ INFO 2025-11-30 02:01:43,098 autoreload 40873 139816719728384 /home/malek/projec
 INFO 2025-11-30 02:01:43,603 autoreload 40909 140187710148352 Watching for file changes with StatReloader
 INFO 2025-11-30 02:27:35,764 autoreload 40909 140187710148352 /home/malek/projects/TourGuideDZ/server/server/settings.py changed, reloading.
 INFO 2025-11-30 02:27:36,427 autoreload 42755 140507820928768 Watching for file changes with StatReloader
+INFO 2025-11-30 03:37:33,337 autoreload 54741 139849106128640 Watching for file changes with StatReloader
+ERROR 2025-11-30 03:39:48,062 log 54741 139848698558144 Internal Server Error: /v1/profiles/guides/20/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 121, in get_object
+    return GuideProfile.objects.get(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        user__id=user_id, verification_status="verified"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-30 03:39:53,264 log 54741 139848698558144 Internal Server Error: /v1/profiles/guides/20/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 121, in get_object
+    return GuideProfile.objects.get(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        user__id=user_id, verification_status="verified"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-30 03:40:35,559 log 54741 139848698558144 Internal Server Error: /v1/profiles/guides/20/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 121, in get_object
+    return GuideProfile.objects.get(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        user__id=user_id, verification_status="verified"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+ERROR 2025-11-30 03:40:37,024 log 54741 139848698558144 Internal Server Error: /v1/profiles/guides/20/pricing/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 121, in get_object
+    return GuideProfile.objects.get(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        user__id=user_id, verification_status="verified"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+WARNING 2025-11-30 03:41:23,679 log 54741 139848698558144 Not Found: /v1/profiles/guides/certifications//
+ERROR 2025-11-30 03:41:27,394 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No GuideCertification matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:41:27,395 log 54741 139848698558144 Not Found: /v1/profiles/guides/certifications/2/
+ERROR 2025-11-30 03:41:34,496 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No GuideCertification matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:41:34,497 log 54741 139848698558144 Not Found: /v1/profiles/guides/certifications/1/
+ERROR 2025-11-30 03:41:39,251 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No GuideCertification matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:41:39,251 log 54741 139848698558144 Not Found: /v1/profiles/guides/certifications/4/
+ERROR 2025-11-30 03:42:07,126 log 54741 139848698558144 Internal Server Error: /v1/profiles/guides/20/
+Traceback (most recent call last):
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/generics.py", line 212, in get
+    return self.retrieve(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/rest_framework/mixins.py", line 54, in retrieve
+    instance = self.get_object()
+  File "/home/malek/projects/TourGuideDZ/server/profiles/views.py", line 49, in get_object
+    return GuideProfile.objects.get(
+           ~~~~~~~~~~~~~~~~~~~~~~~~^
+        user__id=user_id, verification_status="verified"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/malek/projects/TourGuideDZ/.venv/lib64/python3.13/site-packages/django/db/models/query.py", line 639, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+profiles.models.GuideProfile.DoesNotExist: GuideProfile matching query does not exist.
+WARNING 2025-11-30 03:43:11,411 log 54741 139848698558144 Not Found: /v1/tours//
+WARNING 2025-11-30 03:43:16,802 log 54741 139848698558144 Not Found: /v1/tours//
+WARNING 2025-11-30 03:43:55,383 log 54741 139848698558144 Bad Request: /v1/tours/5/calculate-price/
+WARNING 2025-11-30 03:44:12,664 log 54741 139848698558144 Forbidden: /v1/tours/5/
+ERROR 2025-11-30 03:44:48,336 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:44:48,337 log 54741 139848698558144 Not Found: /v1/bookings/3/
+ERROR 2025-11-30 03:44:54,320 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:44:54,320 log 54741 139848698558144 Not Found: /v1/bookings/2/
+ERROR 2025-11-30 03:45:01,256 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:45:01,257 log 54741 139848698558144 Not Found: /v1/bookings/1/
+ERROR 2025-11-30 03:45:07,241 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:45:07,242 log 54741 139848698558144 Not Found: /v1/bookings/1/
+ERROR 2025-11-30 03:45:29,794 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:45:29,795 log 54741 139848698558144 Not Found: /v1/bookings/5/status/
+ERROR 2025-11-30 03:46:03,424 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:03,424 log 54741 139848698558144 Not Found: /v1/bookings/10/status/
+ERROR 2025-11-30 03:46:09,324 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:09,324 log 54741 139848698558144 Not Found: /v1/bookings/6/status/
+ERROR 2025-11-30 03:46:24,398 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:24,398 log 54741 139848698558144 Not Found: /v1/bookings/6/status/
+ERROR 2025-11-30 03:46:29,613 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:29,613 log 54741 139848698558144 Not Found: /v1/bookings/5/status/
+ERROR 2025-11-30 03:46:34,486 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:34,487 log 54741 139848698558144 Not Found: /v1/bookings/1/status/
+ERROR 2025-11-30 03:46:38,427 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:38,427 log 54741 139848698558144 Not Found: /v1/bookings/2/status/
+ERROR 2025-11-30 03:46:42,248 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:42,248 log 54741 139848698558144 Not Found: /v1/bookings/3/status/
+ERROR 2025-11-30 03:46:47,138 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:47,138 log 54741 139848698558144 Not Found: /v1/bookings/7/status/
+ERROR 2025-11-30 03:46:53,208 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:53,208 log 54741 139848698558144 Not Found: /v1/bookings/8/status/
+ERROR 2025-11-30 03:46:58,707 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:46:58,708 log 54741 139848698558144 Not Found: /v1/bookings/10/status/
+ERROR 2025-11-30 03:47:25,220 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:47:25,220 log 54741 139848698558144 Not Found: /v1/bookings/10/invoice/
+ERROR 2025-11-30 03:47:44,744 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:47:44,744 log 54741 139848698558144 Not Found: /v1/bookings/20/status/
+ERROR 2025-11-30 03:47:50,567 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:47:50,568 log 54741 139848698558144 Not Found: /v1/bookings/30/status/
+ERROR 2025-11-30 03:48:12,509 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Booking matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:48:12,510 log 54741 139848698558144 Not Found: /v1/reviews/bookings/30/review/
+WARNING 2025-11-30 03:49:13,845 log 54741 139848698558144 Forbidden: /v1/reviews/bookings/1/review/
+WARNING 2025-11-30 03:49:20,934 log 54741 139848698558144 Forbidden: /v1/reviews/bookings/2/review/
+WARNING 2025-11-30 03:49:26,284 log 54741 139848698558144 Forbidden: /v1/reviews/bookings/3/review/
+WARNING 2025-11-30 03:49:32,236 log 54741 139848698558144 Forbidden: /v1/reviews/bookings/4/review/
+WARNING 2025-11-30 03:49:37,278 log 54741 139848698558144 Forbidden: /v1/reviews/bookings/5/review/
+WARNING 2025-11-30 03:49:41,764 log 54741 139848698558144 Forbidden: /v1/reviews/bookings/6/review/
+WARNING 2025-11-30 03:49:58,869 log 54741 139848698558144 Not Found: /v1/reviews//
+WARNING 2025-11-30 03:50:05,859 log 54741 139848698558144 Not Found: /v1/reviews//
+ERROR 2025-11-30 03:50:57,244 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Conversation matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:50:57,244 log 54741 139848698558144 Not Found: /v1/messaging/conversations/2/messages/
+ERROR 2025-11-30 03:51:13,220 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Conversation matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:51:13,221 log 54741 139848698558144 Not Found: /v1/messaging/conversations/1/messages/
+ERROR 2025-11-30 03:51:23,877 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No Conversation matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:51:23,877 log 54741 139848698558144 Not Found: /v1/messaging/conversations/1/mark_read/
+WARNING 2025-11-30 03:51:31,496 log 54741 139848698558144 Not Found: /v1/messaging/conversations//mark_read/
+ERROR 2025-11-30 03:52:25,880 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No CustomTourRequest matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:52:25,880 log 54741 139848698558144 Not Found: /v1/messaging/custom-requests/2/
+ERROR 2025-11-30 03:52:51,124 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No CustomTourRequest matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:52:51,125 log 54741 139848698558144 Not Found: /v1/messaging/custom-requests/2/
+ERROR 2025-11-30 03:53:16,315 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No CustomTourRequest matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:53:16,315 log 54741 139848698558144 Not Found: /v1/messaging/custom-requests/2/respond/
+ERROR 2025-11-30 03:53:31,462 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No CustomTourRequest matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:53:31,462 log 54741 139848698558144 Not Found: /v1/messaging/custom-requests/2/respond/
+ERROR 2025-11-30 03:53:45,490 exceptions 54741 139848698558144 API Error: 404 - {'detail': ErrorDetail(string='No CustomTourRequest matches the given query.', code='not_found')}
+WARNING 2025-11-30 03:53:45,491 log 54741 139848698558144 Not Found: /v1/messaging/custom-requests/2/respond/
+INFO 2025-11-30 03:56:44,177 autoreload 54741 139849106128640 /home/malek/projects/TourGuideDZ/server/accounts/models.py changed, reloading.
+INFO 2025-11-30 03:56:44,782 autoreload 57498 140497918652160 Watching for file changes with StatReloader
+WARNING 2025-11-30 04:01:26,784 log 57622 139704756514560 Not Found: /api/tours/
+WARNING 2025-11-30 04:01:26,830 log 57622 139704756514560 Not Found: /api/accounts/register/
+ERROR 2025-11-30 04:04:52,408 exceptions 58185 140579514035968 API Error: 400 - {'booking_date': [ErrorDetail(string='Booking date must be in the future.', code='invalid')]}
+WARNING 2025-11-30 04:04:52,409 log 58185 140579514035968 Bad Request: /v1/bookings/
+ERROR 2025-11-30 04:05:57,989 exceptions 58707 140190635630336 API Error: 400 - {'password_confirm': [ErrorDetail(string='This field is required.', code='required')]}
+WARNING 2025-11-30 04:05:57,993 log 58707 140190635630336 Bad Request: /v1/auth/register/

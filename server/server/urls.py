@@ -10,13 +10,15 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 
-@api_view(['GET'])
+
+@api_view(["GET"])
 @permission_classes([AllowAny])
 def health_check(request):
     """Health check endpoint"""
-    return Response({'status': 'healthy', 'message': 'DZ-TourGuide API is running'})
+    return Response({"status": "healthy", "message": "DZ-TourGuide API is running"})
 
-@api_view(['GET'])
+
+@api_view(["GET"])
 @permission_classes([AllowAny])
 def metrics(request):
     """Basic metrics endpoint"""
@@ -24,32 +26,33 @@ def metrics(request):
     from profiles.models import GuideProfile
     from tours.models import Tour
     from bookings.models import Booking
-    
+
     metrics_data = {
-        'total_users': User.objects.count(),
-        'total_guides': GuideProfile.objects.filter(verification_status='verified').count(),
-        'total_tours': Tour.objects.filter(status='active').count(),
-        'total_bookings': Booking.objects.count(),
-        'completed_bookings': Booking.objects.filter(status='completed').count(),
+        "total_users": User.objects.count(),
+        "total_guides": GuideProfile.objects.filter(
+            verification_status="verified"
+        ).count(),
+        "total_tours": Tour.objects.filter(status="active").count(),
+        "total_bookings": Booking.objects.count(),
+        "completed_bookings": Booking.objects.filter(status="completed").count(),
     }
-    
+
     return Response(metrics_data)
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    
+    path("admin/", admin.site.urls),
     # API v1
-    path('v1/auth/', include('accounts.urls')),
-    path('v1/profiles/', include('profiles.urls')),
-    path('v1/tours/', include('tours.urls')),
-    path('v1/bookings/', include('bookings.urls')),
-    path('v1/reviews/', include('reviews.urls')),
-    path('v1/wilayas/', include('locations.urls')),
-    path('v1/messaging/', include('messaging.urls')),
-    
+    path("v1/auth/", include("accounts.urls")),
+    path("v1/profiles/", include("profiles.urls")),
+    path("v1/tours/", include("tours.urls")),
+    path("v1/bookings/", include("bookings.urls")),
+    path("v1/reviews/", include("reviews.urls")),
+    path("v1/wilayas/", include("locations.urls")),
+    path("v1/messaging/", include("messaging.urls")),
     # Health and metrics
-    path('v1/health/', health_check, name='health-check'),
-    path('v1/metrics/', metrics, name='metrics'),
+    path("v1/health/", health_check, name="health-check"),
+    path("v1/metrics/", metrics, name="metrics"),
 ]
 
 # Customize admin site
