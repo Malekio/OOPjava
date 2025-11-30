@@ -1451,7 +1451,8 @@
 									"    pm.expect(response).to.have.property('total_price');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -1459,7 +1460,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/v1/tours/{{tour_id}}/calculate-price/?group_size=8",
+							"raw": "{{base_url}}/v1/tours/{{tour_id}}/calculate-price/?group_size=4",
 							"host": [
 								"{{base_url}}"
 							],
@@ -1473,7 +1474,7 @@
 							"query": [
 								{
 									"key": "group_size",
-									"value": "8"
+									"value": "4"
 								}
 							]
 						}
@@ -1774,7 +1775,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							},
 							{
 								"key": "Content-Type",
@@ -2353,7 +2354,8 @@
 									"    pm.expect(response).to.have.property('status');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2362,7 +2364,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							}
 						],
 						"url": {
@@ -2496,7 +2498,8 @@
 									"    pm.expect(response).to.have.property('status');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2505,7 +2508,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							}
 						],
 						"url": {
@@ -2540,7 +2543,8 @@
 									"    pm.expect(response.description).to.include('Updated');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2549,7 +2553,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{tourist_access_token}}"
 							},
 							{
 								"key": "Content-Type",
@@ -2592,7 +2596,8 @@
 									"    pm.expect(response.status).to.eql('accepted');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -2601,7 +2606,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token}}"
+								"value": "Bearer {{guide_access_token}}"
 							},
 							{
 								"key": "Content-Type",
